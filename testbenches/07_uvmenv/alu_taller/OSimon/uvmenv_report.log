@@ -1,0 +1,9 @@
+2025-08-29 13:10:14,850 | INFO | [uvm_test_top.env.DefaultAgent.monitor] | Transaction response -> {"request": {"ex_aluop_i": "0x6", "ex_datars1_i": "0x39", "ex_datars2_i": "0x30"}, "response": {"ex_zerof_o": "0x0", "ex_data_o": "0x39"}}
+2025-08-29 13:10:14,851 | INFO | [uvm_test_top.env.DefaultAgent.monitor] | Transaction response -> {"request": {"ex_aluop_i": "0x3", "ex_datars1_i": "0x60", "ex_datars2_i": "0x49"}, "response": {"ex_zerof_o": "0x0", "ex_data_o": "0x1"}}
+2025-08-29 13:10:14,852 | INFO | [uvm_test_top.env.DefaultAgent.monitor] | Transaction response -> {"request": {"ex_aluop_i": "0xe", "ex_datars1_i": "0x38", "ex_datars2_i": "0x58"}, "response": {"ex_zerof_o": "0x1", "ex_data_o": "0x0"}}
+2025-08-29 13:10:14,852 | INFO | [uvm_test_top.env.DefaultAgent.monitor] | Transaction response -> {"request": {"ex_aluop_i": "0x4", "ex_datars1_i": "0x2a", "ex_datars2_i": "0x59"}, "response": {"ex_zerof_o": "0x0", "ex_data_o": "0x8"}}
+2025-08-29 13:10:14,853 | INFO | [uvm_test_top.env.DefaultScoreboard] | OR: 00000000000000000000000000111001 | 00000000000000000000000000110000 = 00000000000000000000000000111001
+2025-08-29 13:10:14,853 | INFO | [uvm_test_top.env.DefaultScoreboard] | Div: 0x60 / 0x49 = 0x1
+2025-08-29 13:10:14,853 | INFO | [uvm_test_top.env.DefaultScoreboard] | Shift Right Logical: 0x38 >> 0x58 = 0x0
+2025-08-29 13:10:14,853 | INFO | [uvm_test_top.env.DefaultScoreboard] | Shift Right Logical: 00000000000000000000000000111000 >> 00000000000000000000000001011000 = 00000000000000000000000000000000
+2025-08-29 13:10:14,853 | INFO | [uvm_test_top.env.DefaultScoreboard] | AND: 00000000000000000000000000101010 & 00000000000000000000000001011001 = 00000000000000000000000000001000

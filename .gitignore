@@ -1,0 +1,12 @@
+.vscode/
+
+**/obj_dir/*
+
+**/__pycache__/*
+**/sim_build/*
+**/results.xml
+
+**/intermedio
+
+**/dut_signals.vcd
+
