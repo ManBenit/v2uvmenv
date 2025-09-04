@@ -1,18 +1,20 @@
-# Desarrollo de VLSI con SKYWATER y herramientas open-source (Verificación)
+# Verilog to UVMEnv testbench path
 
-En esta parte del curso se analiza una evolución de uso de diferentes herramientas libres para realizar la validación de un DUT.
+This project shows the step-to-step for creating a verification environment using different tools, from typical verilog testbench until using UVMEnv.
 
-## Ejemplos
-Se realiza el *testbench* de un modelo de ALU utilizando las siguientes herramientas:
-1. Icarus (simulación típica).
-2. Verilator (co-simulación).
-3. "Veripython" (Uso de Verilator + Python para co-simulación).
-4. Cocotb (Testbench en Pyhton usando co-rutinas).
+Each example us used in one or other way into UVMEnv projects, which can be viewed in its main repo.
+
+## Examples
+Testbenches are developed using an ALU model with the next tools:
+1. Icarus (Typical simulation).
+2. Verilator (Co-simulation).
+3. "Veripython" (Use of Verilator + Python for making co-simulation).
+4. Cocotb (Coroutine Cosimulation testbench).
 5. UVM (Universal Verification Metodology).
-6. PyUVM (Implementación de UVM en Python).
-7. UVMEnv (Framework que recopila las herramientas anteriores).
+6. PyUVM (UVM implementation with Python).
+7. UVMEnv (Open-source framework for Python UVM testbenches).
 
-## Repositorios de referencia
+## Related repositories
 - [Verilator](https://github.com/verilator/verilator.git)
 - [Icarus](https://github.com/steveicarus/iverilog.git)
 - [Python](https://github.com/python/cpython.git)
