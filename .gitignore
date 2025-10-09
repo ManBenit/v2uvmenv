@@ -4,9 +4,15 @@
 
 **/__pycache__/*
 **/sim_build/*
+**/work/*
 **/results.xml
 
 **/intermedio
 
 **/dut_signals.vcd
+**/waves*
+**/*.wlf
+
+**/transcript
+
 
