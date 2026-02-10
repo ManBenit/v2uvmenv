@@ -1,0 +1,3273 @@
+Coverage Report by instance with details
+
+=================================================================================
+=== Instance: /top/intf
+=== Design Unit: work.alu_if
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        406       139       267    34.23%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/intf --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                   ex_aluop_i[3-2]           0           0           0           0           0           0           3        0.00 
+                                     ex_aluop_i[1]           1           0           0           0           0           0           3       16.66 
+                                     ex_data_o[31]           0           1           0           0           0           0           3       16.66 
+                                     ex_data_o[22]           0           1           0           0           0           0           3       16.66 
+                                     ex_data_o[20]           0           1           0           0           0           0           3       16.66 
+                                     ex_data_o[16]           0           0           0           0           0           0           3        0.00 
+                                     ex_data_o[15]           0           1           0           0           0           0           3       16.66 
+                                    ex_data_o[8-7]           0           1           0           0           0           0           3       16.66 
+                                      ex_data_o[6]           0           0           0           0           0           0           3        0.00 
+                                      ex_data_o[5]           0           1           0           0           0           0           3       16.66 
+                                      ex_data_o[3]           0           1           0           0           0           0           3       16.66 
+                                      ex_data_o[0]           0           1           0           0           0           0           3       16.66 
+                                  ex_datars1_i[30]           1           0           0           0           0           0           3       16.66 
+                                  ex_datars1_i[29]           0           0           0           0           0           0           3        0.00 
+                                  ex_datars1_i[27]           1           0           0           0           0           0           3       16.66 
+                                  ex_datars1_i[25]           0           0           0           0           0           0           3        0.00 
+                               ex_datars1_i[24-23]           0           1           0           0           0           0           3       16.66 
+                                  ex_datars1_i[21]           1           0           0           0           0           0           3       16.66 
+                                  ex_datars1_i[18]           0           0           0           0           0           0           3        0.00 
+                               ex_datars1_i[16-13]           0           1           0           0           0           0           3       16.66 
+                                   ex_datars1_i[9]           0           1           0           0           0           0           3       16.66 
+                                   ex_datars1_i[8]           1           0           0           0           0           0           3       16.66 
+                                 ex_datars1_i[7-5]           0           1           0           0           0           0           3       16.66 
+                                   ex_datars1_i[4]           0           0           0           0           0           0           3        0.00 
+                                   ex_datars1_i[3]           1           0           0           0           0           0           3       16.66 
+                                   ex_datars1_i[2]           0           1           0           0           0           0           3       16.66 
+                                   ex_datars1_i[0]           0           0           0           0           0           0           3        0.00 
+                                  ex_datars2_i[30]           1           0           0           0           0           0           3       16.66 
+                                  ex_datars2_i[27]           1           0           0           0           0           0           3       16.66 
+                                  ex_datars2_i[26]           0           1           0           0           0           0           3       16.66 
+                                  ex_datars2_i[24]           0           1           0           0           0           0           3       16.66 
+                                  ex_datars2_i[22]           1           0           0           0           0           0           3       16.66 
+                                  ex_datars2_i[17]           0           0           0           0           0           0           3        0.00 
+                                  ex_datars2_i[13]           1           0           0           0           0           0           3       16.66 
+                                  ex_datars2_i[10]           0           1           0           0           0           0           3       16.66 
+                                   ex_datars2_i[8]           0           1           0           0           0           0           3       16.66 
+                                   ex_datars2_i[7]           1           0           0           0           0           0           3       16.66 
+                                   ex_datars2_i[6]           0           0           0           0           0           0           3        0.00 
+                                   ex_datars2_i[5]           0           1           0           0           0           0           3       16.66 
+                                   ex_datars2_i[3]           0           0           0           0           0           0           3        0.00 
+                                 ex_datars2_i[1-0]           0           1           0           0           0           0           3       16.66 
+                                        ex_zerof_o           1           0           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =        101 
+Toggled Node Count   =         50 
+Untoggled Node Count =         51 
+
+Toggle Coverage      =      34.23% (139 of 406 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[31]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[31]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[31]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         22         7        15    31.81%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[31]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           1           0           0           0           0           0           3       16.66 
+                                              cout           1           0           0           0           0           0           3       16.66 
+                                               sal           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          2 
+Untoggled Node Count =          3 
+
+Toggle Coverage      =      31.81% (7 of 22 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[30]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[30]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[30]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         26         6        20    23.07%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[30]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                              cout           1           0           0           0           0           0           3       16.66 
+                                              opea           1           0           0           0           0           0           3       16.66 
+                                              opeb           1           0           0           0           0           0           3       16.66 
+                                               sal           1           0           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          1 
+Untoggled Node Count =          4 
+
+Toggle Coverage      =      23.07% (6 of 26 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[29]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         2         1    66.66%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[29]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         N  '_1' hit but '_0' not hit              Hit '_0' for output ->0 or ->1
+        opeb         Y
+         cin         Y
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           0           0  opea_0                -                                  
+ Row   2:           1           1  opea_1                -                                  
+ Row   3:           1           1  opeb_0                -                                  
+ Row   4:           1           0  opeb_1                -                                  
+ Row   5:           0           1  cin_0                 -                                  
+ Row   6:           1           0  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[29]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         18         7        11    38.88%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[29]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           1           0           0           0           0           0           3       16.66 
+                                              opea           0           0           0           0           0           0           3        0.00 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          3 
+Untoggled Node Count =          2 
+
+Toggle Coverage      =      38.88% (7 of 18 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[28]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[28]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[28]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         22         7        15    31.81%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[28]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           1           0           0           0           0           0           3       16.66 
+                                              cout           1           0           0           0           0           0           3       16.66 
+                                               sal           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          2 
+Untoggled Node Count =          3 
+
+Toggle Coverage      =      31.81% (7 of 22 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[27]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[27]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[27]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          3     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         30         5        25    16.66%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[27]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           0           1           0           0           0           0           3       16.66 
+                                              cout           1           0           0           0           0           0           3       16.66 
+                                              opea           1           0           0           0           0           0           3       16.66 
+                                              opeb           1           0           0           0           0           0           3       16.66 
+                                               sal           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          0 
+Untoggled Node Count =          5 
+
+Toggle Coverage      =      16.66% (5 of 30 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[26]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[26]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[26]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         22         7        15    31.81%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[26]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           0           1           0           0           0           0           3       16.66 
+                                              cout           0           1           0           0           0           0           3       16.66 
+                                              opeb           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          2 
+Untoggled Node Count =          3 
+
+Toggle Coverage      =      31.81% (7 of 22 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[25]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         2         1    66.66%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[25]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         N  '_1' hit but '_0' not hit              Hit '_0' for output ->0 or ->1
+        opeb         Y
+         cin         Y
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           0           0  opea_0                -                                  
+ Row   2:           1           1  opea_1                -                                  
+ Row   3:           0           1  opeb_0                -                                  
+ Row   4:           1           0  opeb_1                -                                  
+ Row   5:           1           1  cin_0                 -                                  
+ Row   6:           1           0  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[25]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         22         6        16    27.27%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[25]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           0           1           0           0           0           0           3       16.66 
+                                              cout           0           1           0           0           0           0           3       16.66 
+                                              opea           0           0           0           0           0           0           3        0.00 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          2 
+Untoggled Node Count =          3 
+
+Toggle Coverage      =      27.27% (6 of 22 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[24]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         2         1    66.66%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[24]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         Y
+        opeb         Y
+         cin         N  '_0' hit but '_1' not hit              Hit '_1' for output ->0 or ->1
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           1           1  opea_0                -                                  
+ Row   2:           1           0  opea_1                -                                  
+ Row   3:           1           0  opeb_0                -                                  
+ Row   4:           0           1  opeb_1                -                                  
+ Row   5:           1           1  cin_0                 -                                  
+ Row   6:           0           0  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[24]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         26         5        21    19.23%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[24]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           0           0           0           0           0           0           3        0.00 
+                                              cout           0           1           0           0           0           0           3       16.66 
+                                              opea           0           1           0           0           0           0           3       16.66 
+                                              opeb           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          1 
+Untoggled Node Count =          4 
+
+Toggle Coverage      =      19.23% (5 of 26 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[23]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         0         3     0.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[23]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 0 of 3 input terms covered = 0.00%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         N  Both rows hit for same output ->1      Hit either row for output ->0
+        opeb         N  Both rows hit for same output ->1      Hit either row for output ->0
+         cin         N  Both rows hit for same output ->1      Hit either row for output ->0
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           0           1  opea_0                -                                  
+ Row   2:           0           1  opea_1                -                                  
+ Row   3:           0           1  opeb_0                -                                  
+ Row   4:           0           1  opeb_1                -                                  
+ Row   5:           0           1  cin_0                 -                                  
+ Row   6:           0           1  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[23]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         22         5        17    22.72%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[23]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                              cout           0           0           0           0           0           0           3        0.00 
+                                              opea           0           1           0           0           0           0           3       16.66 
+                                               sal           0           0           0           0           0           0           3        0.00 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          2 
+Untoggled Node Count =          3 
+
+Toggle Coverage      =      22.72% (5 of 22 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[22]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[22]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[22]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         18         8        10    44.44%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[22]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                              opeb           1           0           0           0           0           0           3       16.66 
+                                               sal           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          3 
+Untoggled Node Count =          2 
+
+Toggle Coverage      =      44.44% (8 of 18 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[21]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[21]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[21]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         18         8        10    44.44%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[21]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                              opea           1           0           0           0           0           0           3       16.66 
+                                               sal           1           0           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          3 
+Untoggled Node Count =          2 
+
+Toggle Coverage      =      44.44% (8 of 18 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[20]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         0         3     0.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[20]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 0 of 3 input terms covered = 0.00%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         N  Both rows hit for same output ->0      Hit either row for output ->1
+        opeb         N  Both rows hit for same output ->0      Hit either row for output ->1
+         cin         N  Both rows hit for same output ->0      Hit either row for output ->1
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           1           0  opea_0                -                                  
+ Row   2:           1           0  opea_1                -                                  
+ Row   3:           1           0  opeb_0                -                                  
+ Row   4:           1           0  opeb_1                -                                  
+ Row   5:           1           0  cin_0                 -                                  
+ Row   6:           1           0  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[20]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         14         8         6    57.14%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[20]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               sal           0           0           0           0           0           0           3        0.00 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          4 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      57.14% (8 of 14 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[19]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[19]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[19]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         10        10         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[19]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          5 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (10 of 10 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[18]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         2         1    66.66%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[18]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         N  '_1' hit but '_0' not hit              Hit '_0' for output ->0 or ->1
+        opeb         Y
+         cin         Y
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           0           0  opea_0                -                                  
+ Row   2:           1           1  opea_1                -                                  
+ Row   3:           1           0  opeb_0                -                                  
+ Row   4:           0           1  opeb_1                -                                  
+ Row   5:           0           1  cin_0                 -                                  
+ Row   6:           1           1  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[18]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         18         7        11    38.88%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[18]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                              opea           0           0           0           0           0           0           3        0.00 
+                                               sal           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          3 
+Untoggled Node Count =          2 
+
+Toggle Coverage      =      38.88% (7 of 18 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[17]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         2         1    66.66%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[17]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         Y
+        opeb         N  '_1' hit but '_0' not hit              Hit '_0' for output ->0 or ->1
+         cin         Y
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           1           1  opea_0                -                                  
+ Row   2:           1           0  opea_1                -                                  
+ Row   3:           0           0  opeb_0                -                                  
+ Row   4:           1           1  opeb_1                -                                  
+ Row   5:           1           1  cin_0                 -                                  
+ Row   6:           1           0  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[17]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         18         7        11    38.88%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[17]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                              opeb           0           0           0           0           0           0           3        0.00 
+                                               sal           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          3 
+Untoggled Node Count =          2 
+
+Toggle Coverage      =      38.88% (7 of 18 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[16]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         0         3     0.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[16]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 0 of 3 input terms covered = 0.00%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         N  Both rows hit for same output ->1      Hit either row for output ->0
+        opeb         N  Both rows hit for same output ->1      Hit either row for output ->0
+         cin         N  Both rows hit for same output ->1      Hit either row for output ->0
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           0           1  opea_0                -                                  
+ Row   2:           0           1  opea_1                -                                  
+ Row   3:           0           1  opeb_0                -                                  
+ Row   4:           0           1  opeb_1                -                                  
+ Row   5:           0           1  cin_0                 -                                  
+ Row   6:           0           1  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[16]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         18         7        11    38.88%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[16]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                              opea           0           1           0           0           0           0           3       16.66 
+                                               sal           0           0           0           0           0           0           3        0.00 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          3 
+Untoggled Node Count =          2 
+
+Toggle Coverage      =      38.88% (7 of 18 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[15]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         2         1    66.66%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[15]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         Y
+        opeb         Y
+         cin         N  '_1' hit but '_0' not hit              Hit '_0' for output ->0 or ->1
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           1           1  opea_0                -                                  
+ Row   2:           1           0  opea_1                -                                  
+ Row   3:           0           1  opeb_0                -                                  
+ Row   4:           1           0  opeb_1                -                                  
+ Row   5:           0           0  cin_0                 -                                  
+ Row   6:           1           1  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[15]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         18         7        11    38.88%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[15]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           0           0           0           0           0           0           3        0.00 
+                                              opea           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          3 
+Untoggled Node Count =          2 
+
+Toggle Coverage      =      38.88% (7 of 18 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[14]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         2         1    66.66%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[14]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         Y
+        opeb         Y
+         cin         N  '_1' hit but '_0' not hit              Hit '_0' for output ->0 or ->1
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           1           0  opea_0                -                                  
+ Row   2:           1           1  opea_1                -                                  
+ Row   3:           1           0  opeb_0                -                                  
+ Row   4:           1           1  opeb_1                -                                  
+ Row   5:           0           0  cin_0                 -                                  
+ Row   6:           1           1  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[14]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          4     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         26         4        22    15.38%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[14]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           0           0           0           0           0           0           3        0.00 
+                                              cout           0           0           0           0           0           0           3        0.00 
+                                              opea           0           1           0           0           0           0           3       16.66 
+                                               sal           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          1 
+Untoggled Node Count =          4 
+
+Toggle Coverage      =      15.38% (4 of 26 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[13]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         0         3     0.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[13]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 0 of 3 input terms covered = 0.00%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         N  Both rows hit for same output ->0      Hit either row for output ->1
+        opeb         N  Both rows hit for same output ->0      Hit either row for output ->1
+         cin         N  Both rows hit for same output ->0      Hit either row for output ->1
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           1           0  opea_0                -                                  
+ Row   2:           1           0  opea_1                -                                  
+ Row   3:           1           0  opeb_0                -                                  
+ Row   4:           1           0  opeb_1                -                                  
+ Row   5:           1           0  cin_0                 -                                  
+ Row   6:           1           0  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[13]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          4     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         26         4        22    15.38%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[13]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                              cout           0           0           0           0           0           0           3        0.00 
+                                              opea           0           1           0           0           0           0           3       16.66 
+                                              opeb           1           0           0           0           0           0           3       16.66 
+                                               sal           0           0           0           0           0           0           3        0.00 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          1 
+Untoggled Node Count =          4 
+
+Toggle Coverage      =      15.38% (4 of 26 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[12]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[12]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[12]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         10        10         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[12]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          5 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (10 of 10 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[11]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[11]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[11]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         10        10         0   100.00%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[11]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          5 
+Untoggled Node Count =          0 
+
+Toggle Coverage      =     100.00% (10 of 10 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[10]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         0         3     0.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[10]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 0 of 3 input terms covered = 0.00%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         N  Both rows hit for same output ->1      Hit either row for output ->0
+        opeb         N  Both rows hit for same output ->1      Hit either row for output ->0
+         cin         N  Both rows hit for same output ->1      Hit either row for output ->0
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           0           1  opea_0                -                                  
+ Row   2:           0           1  opea_1                -                                  
+ Row   3:           0           1  opeb_0                -                                  
+ Row   4:           0           1  opeb_1                -                                  
+ Row   5:           0           1  cin_0                 -                                  
+ Row   6:           0           1  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[10]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         18         7        11    38.88%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[10]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                              opeb           0           1           0           0           0           0           3       16.66 
+                                               sal           0           0           0           0           0           0           3        0.00 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          3 
+Untoggled Node Count =          2 
+
+Toggle Coverage      =      38.88% (7 of 18 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[9]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[9]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[9]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         14         9         5    64.28%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[9]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                              opea           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          4 
+Untoggled Node Count =          1 
+
+Toggle Coverage      =      64.28% (9 of 14 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[8]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[8]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[8]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         22         7        15    31.81%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[8]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           0           1           0           0           0           0           3       16.66 
+                                              opea           1           0           0           0           0           0           3       16.66 
+                                              opeb           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          2 
+Untoggled Node Count =          3 
+
+Toggle Coverage      =      31.81% (7 of 22 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[7]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[7]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[7]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         30         5        25    16.66%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[7]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           0           1           0           0           0           0           3       16.66 
+                                              cout           0           1           0           0           0           0           3       16.66 
+                                              opea           0           1           0           0           0           0           3       16.66 
+                                              opeb           1           0           0           0           0           0           3       16.66 
+                                               sal           1           0           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          0 
+Untoggled Node Count =          5 
+
+Toggle Coverage      =      16.66% (5 of 30 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[6]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         2         1    66.66%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[6]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         Y
+        opeb         N  '_0' hit but '_1' not hit              Hit '_1' for output ->0 or ->1
+         cin         Y
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           1           1  opea_0                -                                  
+ Row   2:           0           1  opea_1                -                                  
+ Row   3:           1           1  opeb_0                -                                  
+ Row   4:           0           0  opeb_1                -                                  
+ Row   5:           1           0  cin_0                 -                                  
+ Row   6:           0           1  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[6]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         22         6        16    27.27%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[6]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                              cout           0           1           0           0           0           0           3       16.66 
+                                              opea           0           1           0           0           0           0           3       16.66 
+                                              opeb           0           0           0           0           0           0           3        0.00 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          2 
+Untoggled Node Count =          3 
+
+Toggle Coverage      =      27.27% (6 of 22 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[5]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[5]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[5]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         22         7        15    31.81%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[5]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           1           0           0           0           0           0           3       16.66 
+                                              opea           0           1           0           0           0           0           3       16.66 
+                                              opeb           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          2 
+Untoggled Node Count =          3 
+
+Toggle Coverage      =      31.81% (7 of 22 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[4]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         2         1    66.66%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[4]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         N  '_0' hit but '_1' not hit              Hit '_1' for output ->0 or ->1
+        opeb         Y
+         cin         Y
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           1           1  opea_0                -                                  
+ Row   2:           0           0  opea_1                -                                  
+ Row   3:           0           1  opeb_0                -                                  
+ Row   4:           1           0  opeb_1                -                                  
+ Row   5:           0           1  cin_0                 -                                  
+ Row   6:           1           1  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[4]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          4     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         26         5        21    19.23%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[4]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           1           0           0           0           0           0           3       16.66 
+                                              cout           1           0           0           0           0           0           3       16.66 
+                                              opea           0           0           0           0           0           0           3        0.00 
+                                               sal           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          1 
+Untoggled Node Count =          4 
+
+Toggle Coverage      =      19.23% (5 of 26 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[3]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         2         1    66.66%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[3]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         Y
+        opeb         N  '_1' hit but '_0' not hit              Hit '_0' for output ->0 or ->1
+         cin         Y
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           0           1  opea_0                -                                  
+ Row   2:           1           1  opea_1                -                                  
+ Row   3:           0           0  opeb_0                -                                  
+ Row   4:           1           1  opeb_1                -                                  
+ Row   5:           1           0  cin_0                 -                                  
+ Row   6:           0           1  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[3]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         22         6        16    27.27%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[3]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                              cout           1           0           0           0           0           0           3       16.66 
+                                              opea           1           0           0           0           0           0           3       16.66 
+                                              opeb           0           0           0           0           0           0           3        0.00 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          2 
+Untoggled Node Count =          3 
+
+Toggle Coverage      =      27.27% (6 of 22 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[2]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         3         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[2]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 3 of 3 input terms covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[2]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          5     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         18         8        10    44.44%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[2]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                              opea           0           1           0           0           0           0           3       16.66 
+                                               sal           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          3 
+Untoggled Node Count =          2 
+
+Toggle Coverage      =      44.44% (8 of 18 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[1]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         2         1    66.66%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[1]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 2 of 3 input terms covered = 66.66%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         Y
+        opeb         Y
+         cin         N  '_0' hit but '_1' not hit              Hit '_1' for output ->0 or ->1
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           1           1  opea_0                -                                  
+ Row   2:           1           0  opea_1                -                                  
+ Row   3:           1           0  opeb_0                -                                  
+ Row   4:           1           1  opeb_1                -                                  
+ Row   5:           1           1  cin_0                 -                                  
+ Row   6:           0           0  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[1]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          4     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         22         6        16    27.27%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[1]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           0           0           0           0           0           0           3        0.00 
+                                              opeb           0           1           0           0           0           0           3       16.66 
+                                               sal           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          2 
+Untoggled Node Count =          3 
+
+Toggle Coverage      =      27.27% (6 of 22 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1/sumadorNbits[0]/genblk1/sum
+=== Design Unit: work.Sumador_2bits
+=================================================================================
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      3         1         2    33.33%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut/Adder_U1/sumadorNbits[0]/genblk1/sum --
+
+  File Sumador.v
+-----------Focused Expression View (Bimodal)------------
+Line       52 Item    1  ((opea ^ opeb) ^ cin)
+Expression totals: 1 of 3 input terms covered = 33.33%
+
+  Input Term   Covered  Reason for no coverage                  Hint
+ -----------  --------  --------------------------------------  --------------
+        opea         N  '_0' hit but '_1' not hit              Hit '_1' for output ->0 or ->1
+        opeb         Y
+         cin         N  '_0' hit but '_1' not hit              Hit '_1' for output ->0 or ->1
+
+    Rows:   Hits(->0)   Hits(->1)  FEC Target            Non-masking condition(s)           
+
+---------  ----------  ----------  --------------------  -------------------------          
+ Row   1:           1           1  opea_0                -                                  
+ Row   2:           0           0  opea_1                -                                  
+ Row   3:           1           0  opeb_0                -                                  
+ Row   4:           0           1  opeb_1                -                                  
+ Row   5:           1           1  cin_0                 -                                  
+ Row   6:           0           0  cin_1                 -                                  
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       1         1         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut/Adder_U1/sumadorNbits[0]/genblk1/sum --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File Sumador.v
+    52              1                          4     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                         30         2        28     6.66%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1/sumadorNbits[0]/genblk1/sum --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                               cin           0           0           0           0           0           0           3        0.00 
+                                              cout           0           0           0           0           0           0           3        0.00 
+                                              opea           0           0           0           0           0           0           3        0.00 
+                                              opeb           0           1           0           0           0           0           3       16.66 
+                                               sal           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =          5 
+Toggled Node Count   =          0 
+Untoggled Node Count =          5 
+
+Toggle Coverage      =       6.66% (2 of 30 bins)
+
+=================================================================================
+=== Instance: /top/dut/Adder_U1
+=== Design Unit: work.Sumador
+=================================================================================
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        548       170       378    31.02%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut/Adder_U1 --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                          carry[0]           0           0           0           0           0           0           3        0.00 
+                                        carry[3-4]           1           0           0           0           0           0           3       16.66 
+                                        carry[6-7]           0           1           0           0           0           0           3       16.66 
+                                      carry[13-14]           0           0           0           0           0           0           3        0.00 
+                                         carry[23]           0           0           0           0           0           0           3        0.00 
+                                      carry[24-26]           0           1           0           0           0           0           3       16.66 
+                                      carry[27-28]           1           0           0           0           0           0           3       16.66 
+                                      carry[30-31]           1           0           0           0           0           0           3       16.66 
+                                               cin           0           0           0           0           0           0           3        0.00 
+                                              cout           1           0           0           0           0           0           3       16.66 
+                                           opea[0]           0           0           0           0           0           0           3        0.00 
+                                           opea[2]           0           1           0           0           0           0           3       16.66 
+                                           opea[3]           1           0           0           0           0           0           3       16.66 
+                                           opea[4]           0           0           0           0           0           0           3        0.00 
+                                         opea[5-7]           0           1           0           0           0           0           3       16.66 
+                                           opea[8]           1           0           0           0           0           0           3       16.66 
+                                           opea[9]           0           1           0           0           0           0           3       16.66 
+                                       opea[13-16]           0           1           0           0           0           0           3       16.66 
+                                          opea[18]           0           0           0           0           0           0           3        0.00 
+                                          opea[21]           1           0           0           0           0           0           3       16.66 
+                                       opea[23-24]           0           1           0           0           0           0           3       16.66 
+                                          opea[25]           0           0           0           0           0           0           3        0.00 
+                                          opea[27]           1           0           0           0           0           0           3       16.66 
+                                          opea[29]           0           0           0           0           0           0           3        0.00 
+                                          opea[30]           1           0           0           0           0           0           3       16.66 
+                                         opeb[0-1]           0           1           0           0           0           0           3       16.66 
+                                           opeb[3]           0           0           0           0           0           0           3        0.00 
+                                           opeb[5]           0           1           0           0           0           0           3       16.66 
+                                           opeb[6]           0           0           0           0           0           0           3        0.00 
+                                           opeb[7]           1           0           0           0           0           0           3       16.66 
+                                           opeb[8]           0           1           0           0           0           0           3       16.66 
+                                          opeb[10]           0           1           0           0           0           0           3       16.66 
+                                          opeb[13]           1           0           0           0           0           0           3       16.66 
+                                          opeb[17]           0           0           0           0           0           0           3        0.00 
+                                          opeb[22]           1           0           0           0           0           0           3       16.66 
+                                          opeb[24]           0           1           0           0           0           0           3       16.66 
+                                          opeb[26]           0           1           0           0           0           0           3       16.66 
+                                          opeb[27]           1           0           0           0           0           0           3       16.66 
+                                          opeb[30]           1           0           0           0           0           0           3       16.66 
+                                          sal[0-2]           0           1           0           0           0           0           3       16.66 
+                                            sal[4]           0           1           0           0           0           0           3       16.66 
+                                            sal[7]           1           0           0           0           0           0           3       16.66 
+                                           sal[10]           0           0           0           0           0           0           3        0.00 
+                                           sal[13]           0           0           0           0           0           0           3        0.00 
+                                           sal[14]           0           1           0           0           0           0           3       16.66 
+                                           sal[16]           0           0           0           0           0           0           3        0.00 
+                                        sal[17-18]           0           1           0           0           0           0           3       16.66 
+                                           sal[20]           0           0           0           0           0           0           3        0.00 
+                                           sal[21]           1           0           0           0           0           0           3       16.66 
+                                           sal[22]           0           1           0           0           0           0           3       16.66 
+                                           sal[23]           0           0           0           0           0           0           3        0.00 
+                                        sal[27-28]           0           1           0           0           0           0           3       16.66 
+                                           sal[30]           1           0           0           0           0           0           3       16.66 
+                                           sal[31]           0           1           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =        130 
+Toggled Node Count   =         58 
+Untoggled Node Count =         72 
+
+Toggle Coverage      =      31.02% (170 of 548 bins)
+
+=================================================================================
+=== Instance: /top/dut
+=== Design Unit: work.ALU
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        17         3        14    17.64%
+
+================================Branch Details================================
+
+Branch Coverage for instance /top/dut
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU.v
+------------------------------------CASE Branch------------------------------------
+    23                                         4     Count coming in to CASE
+    24              1                    ***0***     
+    25              1                          1     
+    26              1                          2     
+    27              1                          1     
+    28              1                    ***0***     
+    29              1                    ***0***     
+    30              1                    ***0***     
+    31              1                    ***0***     
+    32              1                    ***0***     
+    33              1                    ***0***     
+    34              1                    ***0***     
+    35              1                    ***0***     
+    36              1                    ***0***     
+Branch totals: 3 hits of 13 branches = 23.07%
+
+------------------------------------IF Branch------------------------------------
+    34                                   ***0***     Count coming in to IF
+    34              2                    ***0***     
+    34              3                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    35                                   ***0***     Count coming in to IF
+    35              2                    ***0***     
+    35              3                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       2         0         2     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /top/dut --
+
+  File ALU.v
+----------------Focused Condition View-------------------
+Line       34 Item    1  (ex_datars1_i < ex_datars2_i)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                     Input Term   Covered  Reason for no coverage   Hint
+                    -----------  --------  -----------------------  --------------
+  (ex_datars1_i < ex_datars2_i)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                       Non-masking condition(s)      
+ ---------  ---------  --------------------             -------------------------     
+  Row   1:    ***0***  (ex_datars1_i < ex_datars2_i)_0  -                             
+  Row   2:    ***0***  (ex_datars1_i < ex_datars2_i)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       35 Item    1  (ex_datars1_i < ex_datars2_i)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+                     Input Term   Covered  Reason for no coverage   Hint
+                    -----------  --------  -----------------------  --------------
+  (ex_datars1_i < ex_datars2_i)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target                       Non-masking condition(s)      
+ ---------  ---------  --------------------             -------------------------     
+  Row   1:    ***0***  (ex_datars1_i < ex_datars2_i)_0  -                             
+  Row   2:    ***0***  (ex_datars1_i < ex_datars2_i)_1  -                             
+
+
+Expression Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Expressions                      1         1         0   100.00%
+
+================================Expression Details================================
+
+Expression Coverage for instance /top/dut --
+
+  File ALU.v
+----------------Focused Expression View-----------------
+Line       17 Item    1  (ex_data_o == {32{0}})
+Expression totals: 1 of 1 input term covered = 100.00%
+
+
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                      17         7        10    41.17%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top/dut --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File ALU.v
+    17              1                          5     
+    22              1                          4     
+    24              1                    ***0***     
+    25              1                          1     
+    26              1                          2     
+    27              1                          1     
+    28              1                    ***0***     
+    29              1                    ***0***     
+    30              1                    ***0***     
+    31              1                    ***0***     
+    32              1                    ***0***     
+    33              1                    ***0***     
+    34              1                    ***0***     
+    35              1                    ***0***     
+    36              1                    ***0***     
+    51              1                          1     
+    52              1                          1     
+Toggle Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Toggles                        552       180       372    32.60%
+
+================================Toggle Details================================
+
+Toggle Coverage for instance /top/dut --
+
+                                              Node      1H->0L      0L->1H       0L->Z       Z->0L       1H->Z       Z->H1     ExtMode  "Coverage"
+                                              ---------------------------------------------------------------------------------------------------
+                                        add_cout_o           1           0           0           0           0           0           3       16.66 
+                                 add_result_o[0-2]           0           1           0           0           0           0           3       16.66 
+                                   add_result_o[4]           0           1           0           0           0           0           3       16.66 
+                                   add_result_o[7]           1           0           0           0           0           0           3       16.66 
+                                  add_result_o[10]           0           0           0           0           0           0           3        0.00 
+                                  add_result_o[13]           0           0           0           0           0           0           3        0.00 
+                                  add_result_o[14]           0           1           0           0           0           0           3       16.66 
+                                  add_result_o[16]           0           0           0           0           0           0           3        0.00 
+                               add_result_o[17-18]           0           1           0           0           0           0           3       16.66 
+                                  add_result_o[20]           0           0           0           0           0           0           3        0.00 
+                                  add_result_o[21]           1           0           0           0           0           0           3       16.66 
+                                  add_result_o[22]           0           1           0           0           0           0           3       16.66 
+                                  add_result_o[23]           0           0           0           0           0           0           3        0.00 
+                               add_result_o[27-28]           0           1           0           0           0           0           3       16.66 
+                                  add_result_o[30]           1           0           0           0           0           0           3       16.66 
+                                  add_result_o[31]           0           1           0           0           0           0           3       16.66 
+                                     ex_aluop_i[1]           1           0           0           0           0           0           3       16.66 
+                                   ex_aluop_i[2-3]           0           0           0           0           0           0           3        0.00 
+                                     ex_data_o[31]           0           1           0           0           0           0           3       16.66 
+                                     ex_data_o[22]           0           1           0           0           0           0           3       16.66 
+                                     ex_data_o[20]           0           1           0           0           0           0           3       16.66 
+                                     ex_data_o[16]           0           0           0           0           0           0           3        0.00 
+                                     ex_data_o[15]           0           1           0           0           0           0           3       16.66 
+                                    ex_data_o[8-7]           0           1           0           0           0           0           3       16.66 
+                                      ex_data_o[6]           0           0           0           0           0           0           3        0.00 
+                                      ex_data_o[5]           0           1           0           0           0           0           3       16.66 
+                                      ex_data_o[3]           0           1           0           0           0           0           3       16.66 
+                                      ex_data_o[0]           0           1           0           0           0           0           3       16.66 
+                                   ex_datars1_i[0]           0           0           0           0           0           0           3        0.00 
+                                   ex_datars1_i[2]           0           1           0           0           0           0           3       16.66 
+                                   ex_datars1_i[3]           1           0           0           0           0           0           3       16.66 
+                                   ex_datars1_i[4]           0           0           0           0           0           0           3        0.00 
+                                 ex_datars1_i[5-7]           0           1           0           0           0           0           3       16.66 
+                                   ex_datars1_i[8]           1           0           0           0           0           0           3       16.66 
+                                   ex_datars1_i[9]           0           1           0           0           0           0           3       16.66 
+                               ex_datars1_i[13-16]           0           1           0           0           0           0           3       16.66 
+                                  ex_datars1_i[18]           0           0           0           0           0           0           3        0.00 
+                                  ex_datars1_i[21]           1           0           0           0           0           0           3       16.66 
+                               ex_datars1_i[23-24]           0           1           0           0           0           0           3       16.66 
+                                  ex_datars1_i[25]           0           0           0           0           0           0           3        0.00 
+                                  ex_datars1_i[27]           1           0           0           0           0           0           3       16.66 
+                                  ex_datars1_i[29]           0           0           0           0           0           0           3        0.00 
+                                  ex_datars1_i[30]           1           0           0           0           0           0           3       16.66 
+                                 ex_datars2_i[0-1]           0           1           0           0           0           0           3       16.66 
+                                   ex_datars2_i[3]           0           0           0           0           0           0           3        0.00 
+                                   ex_datars2_i[5]           0           1           0           0           0           0           3       16.66 
+                                   ex_datars2_i[6]           0           0           0           0           0           0           3        0.00 
+                                   ex_datars2_i[7]           1           0           0           0           0           0           3       16.66 
+                                   ex_datars2_i[8]           0           1           0           0           0           0           3       16.66 
+                                  ex_datars2_i[10]           0           1           0           0           0           0           3       16.66 
+                                  ex_datars2_i[13]           1           0           0           0           0           0           3       16.66 
+                                  ex_datars2_i[17]           0           0           0           0           0           0           3        0.00 
+                                  ex_datars2_i[22]           1           0           0           0           0           0           3       16.66 
+                                  ex_datars2_i[24]           0           1           0           0           0           0           3       16.66 
+                                  ex_datars2_i[26]           0           1           0           0           0           0           3       16.66 
+                                  ex_datars2_i[27]           1           0           0           0           0           0           3       16.66 
+                                  ex_datars2_i[30]           1           0           0           0           0           0           3       16.66 
+                                        ex_zerof_o           1           0           0           0           0           0           3       16.66 
+
+========
+(n*) - Number was not used in coverage calculations performed by extended toggle algorithms.
+
+Extended Toggle Coverage Calculation Criteria:
+-----------------------------------------------
+	ExtMode 1: 0L->1H & 1H->0L & any one 'Z' transition (to/from 'Z').
+	ExtMode 2: 0L->1H & 1H->0L & one transition to 'Z' & one transition from 'Z'.
+	ExtMode 3: 0L->1H & 1H->0L & all 'Z' transitions.
+========
+
+Total Node Count     =        134 
+Toggled Node Count   =         63 
+Untoggled Node Count =         71 
+
+Toggle Coverage      =      32.60% (180 of 552 bins)
+
+=================================================================================
+=== Instance: /top
+=== Design Unit: work.top
+=================================================================================
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                       4         4         0   100.00%
+
+================================Statement Details================================
+
+Statement Coverage for instance /top --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File tb.sv
+    356             1                          1     
+    357             1                          1     
+    358             1                          1     
+    359             1                          1     
+
+=================================================================================
+=== Instance: /tb_sv_unit
+=== Design Unit: work.tb_sv_unit
+=================================================================================
+Branch Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Branches                        59        12        47    20.33%
+
+================================Branch Details================================
+
+Branch Coverage for instance /tb_sv_unit
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File tb.sv
+------------------------------------IF Branch------------------------------------
+    30                                   ***0***     Count coming in to IF
+    30              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    30                                   ***0***     Count coming in to IF
+    30              2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    30                                   ***0***     Count coming in to IF
+    30              3                    ***0***     
+    30              4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    30                                   ***0***     Count coming in to IF
+    30              5                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    30                                   ***0***     Count coming in to IF
+    30              6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    65                                   ***0***     Count coming in to IF
+    65              1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    65                                   ***0***     Count coming in to IF
+    65              2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    65                                   ***0***     Count coming in to IF
+    65              3                    ***0***     
+    65              4                    ***0***     
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    65                                   ***0***     Count coming in to IF
+    65              5                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    65                                   ***0***     Count coming in to IF
+    65              6                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    81                                         4     Count coming in to IF
+    81              1                    ***0***     
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    81                                   ***0***     Count coming in to IF
+    81              2                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    100                                        1     Count coming in to IF
+    100             1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    101                                  ***0***     Count coming in to IF
+    101             1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    132                                        1     Count coming in to IF
+    132             1                    ***0***     
+                                               1     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    133                                  ***0***     Count coming in to IF
+    133             1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    145                                        4     Count coming in to IF
+    145             1                    ***0***     
+                                               4     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------CASE Branch------------------------------------
+    192                                        4     Count coming in to CASE
+    193             1                    ***0***     
+    194             1                          1     
+    195             1                          2     
+    196             1                          1     
+    197             1                    ***0***     
+    198             1                    ***0***     
+    199             1                    ***0***     
+    200             1                    ***0***     
+    201             1                    ***0***     
+    202             1                    ***0***     
+    203             1                    ***0***     
+    204             1                    ***0***     
+    205             1                    ***0***     
+Branch totals: 3 hits of 13 branches = 23.07%
+
+------------------------------------IF Branch------------------------------------
+    196                                        1     Count coming in to IF
+    196             2                          1     
+    196             3                    ***0***     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    214                                        4     Count coming in to IF
+    214             1                          4     
+    216             1                    ***0***     
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    215                                        4     Count coming in to IF
+    215             1                          4     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    217                                  ***0***     Count coming in to IF
+    217             1                    ***0***     
+                                         ***0***     All False Count
+Branch totals: 0 hits of 2 branches = 0.00%
+
+------------------------------------IF Branch------------------------------------
+    274                                        1     Count coming in to IF
+    274             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+------------------------------------IF Branch------------------------------------
+    275                                        1     Count coming in to IF
+    275             1                          1     
+                                         ***0***     All False Count
+Branch totals: 1 hit of 2 branches = 50.00%
+
+
+Condition Coverage:
+    Enabled Coverage              Bins   Covered    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Conditions                       6         0         6     0.00%
+
+================================Condition Details================================
+
+Condition Coverage for instance /tb_sv_unit --
+
+  File tb.sv
+----------------Focused Condition View-------------------
+Line       30 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       30 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       65 Item    1  (name != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (name != 0)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (name != 0)_0         -                             
+  Row   2:    ***0***  (name != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       65 Item    2  (tmp_data__ != null)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+            Input Term   Covered  Reason for no coverage   Hint
+           -----------  --------  -----------------------  --------------
+  (tmp_data__ != null)         N  No hits                  Hit '_0' and '_1'
+
+     Rows:       Hits  FEC Target              Non-masking condition(s)      
+ ---------  ---------  --------------------    -------------------------     
+  Row   1:    ***0***  (tmp_data__ != null)_0  -                             
+  Row   2:    ***0***  (tmp_data__ != null)_1  -                             
+
+----------------Focused Condition View-------------------
+Line       196 Item    1  (tr.b != 0)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+   Input Term   Covered  Reason for no coverage   Hint
+  -----------  --------  -----------------------  --------------
+  (tr.b != 0)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tr.b != 0)_0         -                             
+  Row   2:          1  (tr.b != 0)_1         -                             
+
+----------------Focused Condition View-------------------
+Line       214 Item    1  (tr.y === refm)
+Condition totals: 0 of 1 input term covered = 0.00%
+
+       Input Term   Covered  Reason for no coverage   Hint
+      -----------  --------  -----------------------  --------------
+  (tr.y === refm)         N  '_0' not hit             Hit '_0'
+
+     Rows:       Hits  FEC Target            Non-masking condition(s)      
+ ---------  ---------  --------------------  -------------------------     
+  Row   1:    ***0***  (tr.y === refm)_0     -                             
+  Row   2:          1  (tr.y === refm)_1     -                             
+
+
+
+Covergroup Coverage:
+    Covergroups                      1        na        na    45.83%
+        Coverpoints/Crosses          3        na        na        na
+            Covergroup Bins         38         8        30    21.05%
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /tb_sv_unit/ALUCoverage/alu_cg                   45.83%        100          -    Uncovered            
+    covered/total bins:                                     8         38          -                      
+    missing/total bins:                                    30         38          -                      
+    % Hit:                                             21.05%        100          -                      
+    Coverpoint cp_aluop                                25.00%        100          -    Uncovered            
+        covered/total bins:                                 3         12          -                      
+        missing/total bins:                                 9         12          -                      
+        % Hit:                                         25.00%        100          -                      
+        bin add                                             0          1          -    ZERO                 
+        bin sub                                             1          1          -    Covered              
+        bin mul                                             2          1          -    Covered              
+        bin div                                             1          1          -    Covered              
+        bin andop                                           0          1          -    ZERO                 
+        bin xorop                                           0          1          -    ZERO                 
+        bin orop                                            0          1          -    ZERO                 
+        bin sll                                             0          1          -    ZERO                 
+        bin sra                                             0          1          -    ZERO                 
+        bin srl                                             0          1          -    ZERO                 
+        bin slt                                             0          1          -    ZERO                 
+        bin sltu                                            0          1          -    ZERO                 
+        illegal_bin others                                  0                     -    ZERO                 
+    Coverpoint cp_zero                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero_set                                        1          1          -    Covered              
+        bin zero_clear                                      3          1          -    Covered              
+    Cross aluop_x_zero                                 12.50%        100          -    Uncovered            
+        covered/total bins:                                 3         24          -                      
+        missing/total bins:                                21         24          -                      
+        % Hit:                                         12.50%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <mul,zero_clear>                            2          1          -    Covered              
+            bin <sub,zero_clear>                            1          1          -    Covered              
+            bin <div,zero_set>                              1          1          -    Covered              
+            bin <sltu,*>                                    0          1          2    ZERO                 
+            bin <slt,*>                                     0          1          2    ZERO                 
+            bin <srl,*>                                     0          1          2    ZERO                 
+            bin <sra,*>                                     0          1          2    ZERO                 
+            bin <sll,*>                                     0          1          2    ZERO                 
+            bin <orop,*>                                    0          1          2    ZERO                 
+            bin <xorop,*>                                   0          1          2    ZERO                 
+            bin <andop,*>                                   0          1          2    ZERO                 
+            bin <add,*>                                     0          1          2    ZERO                 
+            bin <div,zero_clear>                            0          1          1    ZERO                 
+            bin <mul,zero_set>                              0          1          1    ZERO                 
+            bin <sub,zero_set>                              0          1          1    ZERO                 
+ Covergroup instance \/tb_sv_unit::ALUCoverage::alu_cg  
+                                                       45.83%        100          -    Uncovered            
+    covered/total bins:                                     8         38          -                      
+    missing/total bins:                                    30         38          -                      
+    % Hit:                                             21.05%        100          -                      
+    Coverpoint cp_aluop                                25.00%        100          -    Uncovered            
+        covered/total bins:                                 3         12          -                      
+        missing/total bins:                                 9         12          -                      
+        % Hit:                                         25.00%        100          -                      
+        bin add                                             0          1          -    ZERO                 
+        bin sub                                             1          1          -    Covered              
+        bin mul                                             2          1          -    Covered              
+        bin div                                             1          1          -    Covered              
+        bin andop                                           0          1          -    ZERO                 
+        bin xorop                                           0          1          -    ZERO                 
+        bin orop                                            0          1          -    ZERO                 
+        bin sll                                             0          1          -    ZERO                 
+        bin sra                                             0          1          -    ZERO                 
+        bin srl                                             0          1          -    ZERO                 
+        bin slt                                             0          1          -    ZERO                 
+        bin sltu                                            0          1          -    ZERO                 
+        illegal_bin others                                  0                     -    ZERO                 
+    Coverpoint cp_zero                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero_set                                        1          1          -    Covered              
+        bin zero_clear                                      3          1          -    Covered              
+    Cross aluop_x_zero                                 12.50%        100          -    Uncovered            
+        covered/total bins:                                 3         24          -                      
+        missing/total bins:                                21         24          -                      
+        % Hit:                                         12.50%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <mul,zero_clear>                            2          1          -    Covered              
+            bin <sub,zero_clear>                            1          1          -    Covered              
+            bin <div,zero_set>                              1          1          -    Covered              
+            bin <sltu,*>                                    0          1          2    ZERO                 
+            bin <slt,*>                                     0          1          2    ZERO                 
+            bin <srl,*>                                     0          1          2    ZERO                 
+            bin <sra,*>                                     0          1          2    ZERO                 
+            bin <sll,*>                                     0          1          2    ZERO                 
+            bin <orop,*>                                    0          1          2    ZERO                 
+            bin <xorop,*>                                   0          1          2    ZERO                 
+            bin <andop,*>                                   0          1          2    ZERO                 
+            bin <add,*>                                     0          1          2    ZERO                 
+            bin <div,zero_clear>                            0          1          1    ZERO                 
+            bin <mul,zero_set>                              0          1          1    ZERO                 
+            bin <sub,zero_set>                              0          1          1    ZERO                 
+Statement Coverage:
+    Enabled Coverage              Bins      Hits    Misses  Coverage
+    ----------------              ----      ----    ------  --------
+    Statements                     117        70        47    59.82%
+
+================================Statement Details================================
+
+Statement Coverage for instance /tb_sv_unit --
+
+    Line         Item                      Count     Source 
+    ----         ----                      -----     ------ 
+  File tb.sv
+    30              1                    ***0***     
+    30              2                    ***0***     
+    30              3                    ***0***     
+    30              4                    ***0***     
+    30              5                    ***0***     
+    30              6                          4     
+    30              7                    ***0***     
+    30              8                    ***0***     
+    30              9                    ***0***     
+    30             10                    ***0***     
+    34              1                          9     
+    65              1                    ***0***     
+    65              2                    ***0***     
+    65              3                    ***0***     
+    65              4                    ***0***     
+    65              5                    ***0***     
+    65              6                          1     
+    65              7                    ***0***     
+    65              8                    ***0***     
+    65              9                    ***0***     
+    65             10                    ***0***     
+    69              1                          1     
+    70              1                          1     
+    76              1                          4     
+    77              1                          4     
+    78              1                          4     
+    81              1                    ***0***     
+    82              1                          4     
+    91              1                    ***0***     
+    91              2                    ***0***     
+    91              3                          1     
+    95              1                          1     
+    101             1                    ***0***     
+    105             1                          1     
+    107             1                          5     
+    108             1                          4     
+    109             1                          4     
+    110             1                          4     
+    111             1                          4     
+    112             1                          4     
+    121             1                    ***0***     
+    121             2                    ***0***     
+    121             3                          1     
+    126             1                          1     
+    127             1                          1     
+    133             1                    ***0***     
+    137             1                          1     
+    138             1                          5     
+    139             1                          5     
+    140             1                          4     
+    141             1                          4     
+    142             1                          4     
+    143             1                          4     
+    144             1                          4     
+    145             1                    ***0***     
+    146             1                          4     
+    155             1                    ***0***     
+    155             2                    ***0***     
+    155             3                          1     
+    162             1                          1     
+    166             1                          1     
+    167             1                          1     
+    168             1                          1     
+    172             1                          1     
+    181             1                    ***0***     
+    181             2                    ***0***     
+    181             3                          1     
+    186             1                          1     
+    187             1                          1     
+    193             1                    ***0***     
+    194             1                          1     
+    195             1                          2     
+    196             1                          1     
+    197             1                    ***0***     
+    198             1                    ***0***     
+    199             1                    ***0***     
+    200             1                    ***0***     
+    201             1                    ***0***     
+    202             1                    ***0***     
+    203             1                    ***0***     
+    204             1                    ***0***     
+    205             1                    ***0***     
+    212             1                          4     
+    215             1                          4     
+    217             1                    ***0***     
+    225             1                    ***0***     
+    225             2                    ***0***     
+    225             3                          1     
+    260             1                          1     
+    261             1                          1     
+    262             1                          1     
+    267             1                          4     
+    268             1                          4     
+    269             1                          4     
+    273             1                          1     
+    274             1                          1     
+    275             1                          1     
+    289             1                    ***0***     
+    289             2                    ***0***     
+    289             3                          1     
+    295             1                          1     
+    299             1                          1     
+    300             1                          1     
+    301             1                          1     
+    305             1                          1     
+    306             1                          1     
+    314             1                    ***0***     
+    314             2                    ***0***     
+    314             3                          2     
+    319             1                          1     
+    323             1                          1     
+    324             1                          1     
+    328             1                          1     
+    329             1                          1     
+    330             1                          1     
+    334             1                          1     
+    335             1                          1     
+
+COVERGROUP COVERAGE:
+----------------------------------------------------------------------------------------------------------
+Covergroup                                             Metric       Goal       Bins    Status               
+                                                                                                         
+----------------------------------------------------------------------------------------------------------
+ TYPE /tb_sv_unit/ALUCoverage/alu_cg                   45.83%        100          -    Uncovered            
+    covered/total bins:                                     8         38          -                      
+    missing/total bins:                                    30         38          -                      
+    % Hit:                                             21.05%        100          -                      
+    Coverpoint cp_aluop                                25.00%        100          -    Uncovered            
+        covered/total bins:                                 3         12          -                      
+        missing/total bins:                                 9         12          -                      
+        % Hit:                                         25.00%        100          -                      
+        bin add                                             0          1          -    ZERO                 
+        bin sub                                             1          1          -    Covered              
+        bin mul                                             2          1          -    Covered              
+        bin div                                             1          1          -    Covered              
+        bin andop                                           0          1          -    ZERO                 
+        bin xorop                                           0          1          -    ZERO                 
+        bin orop                                            0          1          -    ZERO                 
+        bin sll                                             0          1          -    ZERO                 
+        bin sra                                             0          1          -    ZERO                 
+        bin srl                                             0          1          -    ZERO                 
+        bin slt                                             0          1          -    ZERO                 
+        bin sltu                                            0          1          -    ZERO                 
+        illegal_bin others                                  0                     -    ZERO                 
+    Coverpoint cp_zero                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero_set                                        1          1          -    Covered              
+        bin zero_clear                                      3          1          -    Covered              
+    Cross aluop_x_zero                                 12.50%        100          -    Uncovered            
+        covered/total bins:                                 3         24          -                      
+        missing/total bins:                                21         24          -                      
+        % Hit:                                         12.50%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <mul,zero_clear>                            2          1          -    Covered              
+            bin <sub,zero_clear>                            1          1          -    Covered              
+            bin <div,zero_set>                              1          1          -    Covered              
+            bin <sltu,*>                                    0          1          2    ZERO                 
+            bin <slt,*>                                     0          1          2    ZERO                 
+            bin <srl,*>                                     0          1          2    ZERO                 
+            bin <sra,*>                                     0          1          2    ZERO                 
+            bin <sll,*>                                     0          1          2    ZERO                 
+            bin <orop,*>                                    0          1          2    ZERO                 
+            bin <xorop,*>                                   0          1          2    ZERO                 
+            bin <andop,*>                                   0          1          2    ZERO                 
+            bin <add,*>                                     0          1          2    ZERO                 
+            bin <div,zero_clear>                            0          1          1    ZERO                 
+            bin <mul,zero_set>                              0          1          1    ZERO                 
+            bin <sub,zero_set>                              0          1          1    ZERO                 
+ Covergroup instance \/tb_sv_unit::ALUCoverage::alu_cg  
+                                                       45.83%        100          -    Uncovered            
+    covered/total bins:                                     8         38          -                      
+    missing/total bins:                                    30         38          -                      
+    % Hit:                                             21.05%        100          -                      
+    Coverpoint cp_aluop                                25.00%        100          -    Uncovered            
+        covered/total bins:                                 3         12          -                      
+        missing/total bins:                                 9         12          -                      
+        % Hit:                                         25.00%        100          -                      
+        bin add                                             0          1          -    ZERO                 
+        bin sub                                             1          1          -    Covered              
+        bin mul                                             2          1          -    Covered              
+        bin div                                             1          1          -    Covered              
+        bin andop                                           0          1          -    ZERO                 
+        bin xorop                                           0          1          -    ZERO                 
+        bin orop                                            0          1          -    ZERO                 
+        bin sll                                             0          1          -    ZERO                 
+        bin sra                                             0          1          -    ZERO                 
+        bin srl                                             0          1          -    ZERO                 
+        bin slt                                             0          1          -    ZERO                 
+        bin sltu                                            0          1          -    ZERO                 
+        illegal_bin others                                  0                     -    ZERO                 
+    Coverpoint cp_zero                                100.00%        100          -    Covered              
+        covered/total bins:                                 2          2          -                      
+        missing/total bins:                                 0          2          -                      
+        % Hit:                                        100.00%        100          -                      
+        bin zero_set                                        1          1          -    Covered              
+        bin zero_clear                                      3          1          -    Covered              
+    Cross aluop_x_zero                                 12.50%        100          -    Uncovered            
+        covered/total bins:                                 3         24          -                      
+        missing/total bins:                                21         24          -                      
+        % Hit:                                         12.50%        100          -                      
+        Auto, Default and User Defined Bins:
+            bin <mul,zero_clear>                            2          1          -    Covered              
+            bin <sub,zero_clear>                            1          1          -    Covered              
+            bin <div,zero_set>                              1          1          -    Covered              
+            bin <sltu,*>                                    0          1          2    ZERO                 
+            bin <slt,*>                                     0          1          2    ZERO                 
+            bin <srl,*>                                     0          1          2    ZERO                 
+            bin <sra,*>                                     0          1          2    ZERO                 
+            bin <sll,*>                                     0          1          2    ZERO                 
+            bin <orop,*>                                    0          1          2    ZERO                 
+            bin <xorop,*>                                   0          1          2    ZERO                 
+            bin <andop,*>                                   0          1          2    ZERO                 
+            bin <add,*>                                     0          1          2    ZERO                 
+            bin <div,zero_clear>                            0          1          1    ZERO                 
+            bin <mul,zero_set>                              0          1          1    ZERO                 
+            bin <sub,zero_set>                              0          1          1    ZERO                 
+
+TOTAL COVERGROUP COVERAGE: 45.83%  COVERGROUP TYPES: 1
+
+Total Coverage By Instance (filtered view): 39.43%
+
