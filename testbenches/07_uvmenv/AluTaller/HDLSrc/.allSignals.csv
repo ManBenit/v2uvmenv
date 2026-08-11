@@ -1,0 +1,11 @@
+module,signal,length,type
+adder,cin,1,INPUT
+adder,cout,1,OUTPUT
+adder,opea,32,INPUT
+adder,opeb,32,INPUT
+adder,sal,32,OUTPUT
+ALU,ex_aluop_i,4,INPUT
+ALU,ex_zerof_o,1,OUTPUT
+ALU,ex_datars1_i,32,INPUT
+ALU,ex_datars2_i,32,INPUT
+ALU,ex_data_o,32,OUTPUT
