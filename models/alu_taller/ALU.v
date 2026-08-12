@@ -1,5 +1,7 @@
+// `timescale 1ns/1ps
+
 module ALU #(
-    parameter WORD  = 32,
+    parameter WORD  = 8,
     parameter ALUOP = 4
 )(
     input      [WORD-1:0]  ex_datars1_i,
@@ -41,11 +43,4 @@ module ALU #(
         .sal  (add_result_o), // result
         .cout (add_cout_o)    // carry out
     );
-
-    // vcd_dump for simulation
-    initial begin 
-        $dumpfile("dut_signals.vcd");
-        $dumpvars(2, ALU); 
-    end
-
 endmodule

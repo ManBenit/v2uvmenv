@@ -10,11 +10,11 @@ test_cases = [
     {'op': 0x8, 'rs1': 10, 'rs2': 5},
     {'op': 0xD, 'rs1': -0x8, 'rs2': 0x1},  # SRA
     {'op': 0x9, 'rs1': 0x5, 'rs2': 0xA},   # SLT
-    {'op': 0xA, 'rs1': 0xFFFFFFF0, 'rs2': 0xA}  # SLTU
+    {'op': 0xA, 'rs1': 0xF0, 'rs2': 0xA}  # SLTU
 ]
 
-def mask32(val):
-    return val & 0xFFFFFFFF
+def mask8(val):
+    return val & 0xFF
 
 @cocotb.test()
 async def alu_test(dut):
@@ -49,27 +49,27 @@ async def alu_test(dut):
     dut.ex_aluop_i.value = 0x4
     await Timer(1, units='ns')
     print('AND: {} & {} = {}'.format(
-        format(mask32(test_cases[0]['rs1']), '032b'),
-        format(mask32(test_cases[0]['rs2']), '032b'),
-        format(mask32(int(dut.ex_data_o.value)), '032b')
+        format(mask8(test_cases[0]['rs1']), '08b'),
+        format(mask8(test_cases[0]['rs2']), '08b'),
+        format(mask8(int(dut.ex_data_o.value)), '08b')
     ))
 
     # Case 5: XOR
     dut.ex_aluop_i.value = 0x5
     await Timer(1, units='ns')
     print('XOR: {} & {} = {}'.format(
-        format(mask32(test_cases[0]['rs1']), '032b'),
-        format(mask32(test_cases[0]['rs2']), '032b'),
-        format(mask32(int(dut.ex_data_o.value)), '032b')
+        format(mask8(test_cases[0]['rs1']), '08b'),
+        format(mask8(test_cases[0]['rs2']), '08b'),
+        format(mask8(int(dut.ex_data_o.value)), '08b')
     ))
 
     # Case 6: OR
     dut.ex_aluop_i.value = 0x6
     await Timer(1, units='ns')
     print('OR: {} & {} = {}'.format(
-        format(mask32(test_cases[0]['rs1']), '032b'),
-        format(mask32(test_cases[0]['rs2']), '032b'),
-        format(mask32(int(dut.ex_data_o.value)), '032b')
+        format(mask8(test_cases[0]['rs1']), '08b'),
+        format(mask8(test_cases[0]['rs2']), '08b'),
+        format(mask8(int(dut.ex_data_o.value)), '08b')
     ))
 
     # Case 7: Shift left logical of 2
@@ -82,26 +82,28 @@ async def alu_test(dut):
         res
     ))
     print('Shift Left 2: {} << 2 = {}'.format(
-        format(mask32(test_cases[0]['rs1']), '032b'),
-        format(mask32(res), '032b')
+        format(mask8(test_cases[0]['rs1']), '08b'),
+        format(mask8(res), '08b')
     ))
+    print('===')
 
     # Case D: Shift right arith
     dut.ex_aluop_i.value = 0xD
     dut.ex_datars1_i.value = test_cases[1]['rs1']
     dut.ex_datars2_i.value = test_cases[1]['rs2']
     await Timer(1, units='ns')
-    res = int(dut.ex_data_o.value)
+    res = dut.ex_data_o.value
     print('Shift Right Arith: {} >>> {} = {}'.format(
         test_cases[1]['rs1'],
         test_cases[1]['rs2'],
         res
     ))
     print('Shift Right Arith: {} >>> {} = {}'.format(
-        format(mask32(test_cases[1]['rs1']), '032b'),
-        format(mask32(test_cases[1]['rs2']), '032b'),
-        format(mask32(res), '032b')
+        format(mask8(test_cases[1]['rs1']), '08b'),
+        format(mask8(test_cases[1]['rs2']), '08b'),
+        format(mask8(res), '08b')
     ))
+    print('===')
     
 
     # Case E: Shift right logical
@@ -114,10 +116,11 @@ async def alu_test(dut):
         res
     ))
     print('Shift Right Logical: {} >> {} = {}'.format(
-        format(mask32(test_cases[1]['rs1']), '032b'),
-        format(mask32(test_cases[1]['rs2']), '032b'),
-        format(mask32(res), '032b')
+        format(mask8(test_cases[1]['rs1']), '08b'),
+        format(mask8(test_cases[1]['rs2']), '08b'),
+        format(mask8(res), '08b')
     ))
+    print('===')
 
     # Case 9: SLT (signed)
     dut.ex_aluop_i.value = 0x9

@@ -1,5 +1,5 @@
 module tb_ALU;
-    parameter WORD  = 32;
+    parameter WORD  = 8;
     parameter ALUOP = 4;
 
     reg  [WORD-1:0] ex_datars1_i;
@@ -8,7 +8,7 @@ module tb_ALU;
     wire [WORD-1:0] ex_data_o;
     wire ex_zerof_o;
 
-    // Instancia de la ALU
+
     ALU #(
         .WORD(WORD),
         .ALUOP(ALUOP)
@@ -20,13 +20,16 @@ module tb_ALU;
         .ex_zerof_o(ex_zerof_o)
     );
 
-    // Procedimiento de prueba
+
     initial begin
+        $dumpfile("dut_signals.vcd");
+        $dumpvars(2, tb_ALU);
+
         $display("=== START TESTBENCH ===");
 
         // Operands
-        ex_datars1_i = 32'd10; 
-        ex_datars2_i = 32'd5; 
+        ex_datars1_i = 8'd10; 
+        ex_datars2_i = 8'd5; 
         
         // Case 4'h8: Add
         ex_aluop_i = 4'h8;
@@ -61,29 +64,32 @@ module tb_ALU;
         ex_datars2_i = 4'h2;
         #1 $display("Shift Left 2: %d << 2 = %d", ex_datars1_i, ex_data_o);
         #1 $display("Shift Left 2: %b << 2 = %b", ex_datars1_i, ex_data_o);
+        #1 $display("===");
 
         // Case 4'hD: Shift right arith
         ex_aluop_i = 4'hD; 
-        ex_datars1_i = -32'sd8; // valor negativo para ver el efecto
-        ex_datars2_i = 32'd1; // desplazar 1 bit
+        ex_datars1_i = -8'sd8; // Neg value to watch effect
+        ex_datars2_i = 8'd1; // shift 1 bit
         #1 $display("Shift Right Arith: %d >>> %d = %d", ex_datars1_i, ex_datars2_i, ex_data_o);
         #1 $display("Shift Right Arith: %b >>> %b = %b", ex_datars1_i, ex_datars2_i, ex_data_o);
+        #1 $display("===");
 
         // Case 4'hE: Shift right logical
         ex_aluop_i = 4'hE;
         #1 $display("Shift Right Logical: %d >> %d = %d", ex_datars1_i, ex_datars2_i, ex_data_o);
         #1 $display("Shift Right Logical: %b >> %b = %b", ex_datars1_i, ex_datars2_i, ex_data_o);
+        #1 $display("===");
 
         // Case 4'h9: SLT (signed)
         ex_aluop_i = 4'h9; 
-        ex_datars1_i = 32'd5; 
-        ex_datars2_i = 32'd10;
+        ex_datars1_i = 8'd5; 
+        ex_datars2_i = 8'd10;
         #1 $display("SLT: %d < %d ? %d", ex_datars1_i, ex_datars2_i, ex_data_o);
 
         // Case 4'hA: SLTU (unsigned)
-        ex_aluop_i = 4'hA; 
-        ex_datars1_i = 32'hFFFFFFF0; 
-        ex_datars2_i = 32'd10;
+        ex_aluop_i = 4'hA;
+        ex_datars1_i = 8'hF0; // -16
+        ex_datars2_i = 8'd10;
         #1 $display("SLTU: %h < %h ? %d", ex_datars1_i, ex_datars2_i, ex_data_o);
 
         // Case default

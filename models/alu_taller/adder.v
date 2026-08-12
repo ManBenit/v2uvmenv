@@ -1,5 +1,7 @@
+// `timescale 1ns/1ps
+
 module adder #(
-    parameter WORD = 32
+    parameter WORD = 8
   )(
 	input  [WORD-1:0]    opea,
     input  [WORD-1:0]    opeb,

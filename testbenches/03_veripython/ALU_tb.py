@@ -3,16 +3,31 @@ import ctypes
 # Load shared library
 sim = ctypes.CDLL('./obj_dir/libalu.so')
 
+# ===========================================================
+# Configure types for ctypes
+# ===========================================================
+sim.init.restype = None
+sim.dump.restype = None
+sim.finalize.restype = None
+
+sim.set_ex_datars1_i.argtypes = [ctypes.c_long]
+sim.set_ex_datars2_i.argtypes = [ctypes.c_long]
+sim.set_ex_aluop_i.argtypes = [ctypes.c_long]
+
+sim.get_ex_zerof_o.restype = ctypes.c_long
+sim.get_ex_data_o.restype = ctypes.c_long
+# ===========================================================
+
 # Initialize simulation
 sim.init()
+#sim.reset()
 
 # Test cases
 test_cases = [
-    # (op, rs1, rs2)
     {'op': 0x8, 'rs1': 10, 'rs2': 5},
     {'op': 0xD, 'rs1': -0x8, 'rs2': 0x1}, # SRA
     {'op': 0x9, 'rs1': 0x5, 'rs2': 0xA}, # SLT
-    {'op': 0xA, 'rs1': 0xFFFFFFF0, 'rs2': 0xA}  # SLTU
+    {'op': 0xA, 'rs1': -16, 'rs2': 0xA}  # SLTU
 ]
 
 print('=== START TESTBENCH ===')
@@ -45,27 +60,27 @@ print(f'Div: {test_cases[0]['rs1']} / {test_cases[0]['rs2']} = {sim.get_ex_data_
 sim.set_ex_aluop_i(0x4)
 sim.dump()
 print('AND: {} & {} = {}'.format(   
-    format(test_cases[0]['rs1'] & 0xFFFFFFFF, '032b'),
-    format(test_cases[0]['rs2'] & 0xFFFFFFFF, '032b'),
-    format(sim.get_ex_data_o() & 0xFFFFFFFF, '032b')    
+    format(test_cases[0]['rs1'] & 0xFF, '08b'),
+    format(test_cases[0]['rs2'] & 0xFF, '08b'),
+    format(sim.get_ex_data_o() & 0xFF, '08b')    
 ))
 
 # Case 5: XOR
 sim.set_ex_aluop_i(0x5)
 sim.dump()
 print('XOR: {} & {} = {}'.format(   
-    format(test_cases[0]['rs1'] & 0xFFFFFFFF, '032b'),
-    format(test_cases[0]['rs2'] & 0xFFFFFFFF, '032b'),
-    format(sim.get_ex_data_o() & 0xFFFFFFFF, '032b')    
+    format(test_cases[0]['rs1'] & 0xFF, '08b'),
+    format(test_cases[0]['rs2'] & 0xFF, '08b'),
+    format(sim.get_ex_data_o() & 0xFF, '08b')    
 ))
 
 # Case 6: OR
 sim.set_ex_aluop_i(0x6)
 sim.dump()
 print('OR: {} & {} = {}'.format(   
-    format(test_cases[0]['rs1'] & 0xFFFFFFFF, '032b'),
-    format(test_cases[0]['rs2'] & 0xFFFFFFFF, '032b'),
-    format(sim.get_ex_data_o() & 0xFFFFFFFF, '032b')    
+    format(test_cases[0]['rs1'] & 0xFF, '08b'),
+    format(test_cases[0]['rs2'] & 0xFF, '08b'),
+    format(sim.get_ex_data_o() & 0xFF, '08b')    
 ))
 
 # Case 7: Shift left logical of 2
@@ -78,9 +93,10 @@ print('Shift Left 2: {} << 2 = {}'.format(
     res
 ))
 print('Shift Left 2: {} << 2 = {}'.format(   
-    format(test_cases[0]['rs1'] & 0xFFFFFFFF, '032b'),
-    format(res & 0xFFFFFFFF, '032b')    
+    format(test_cases[0]['rs1'] & 0xFF, '08b'),
+    format(res & 0xFF, '08b')    
 ))
+print('===')
 
 # Case D: Shift right arith
 sim.set_ex_aluop_i(0xD)
@@ -94,10 +110,11 @@ print('Shift Right Arith: {} >>> {} = {}'.format(
     res
 ))
 print('Shift Right Arith: {} >>> {} = {}'.format(   
-    format(test_cases[1]['rs1'] & 0xFFFFFFFF, '032b'),
-    format(test_cases[1]['rs2'] & 0xFFFFFFFF, '032b'),
-    format(res & 0xFFFFFFFF, '032b')    
+    format(test_cases[1]['rs1'] & 0xFF, '08b'),
+    format(test_cases[1]['rs2'] & 0xFF, '08b'),
+    format(res & 0xFF, '08b')    
 ))
+print('===')
 
 # Case E: Shift right logical
 sim.set_ex_aluop_i(0xE)
@@ -109,10 +126,11 @@ print('Shift Right Logical: {} >> {} = {}'.format(
     res
 ))
 print('Shift Right Logical: {} >> {} = {}'.format(   
-    format(test_cases[1]['rs1'] & 0xFFFFFFFF, '032b'),
-    format(test_cases[1]['rs2'] & 0xFFFFFFFF, '032b'),
-    format(res & 0xFFFFFFFF, '032b')    
+    format(test_cases[1]['rs1'] & 0xFF, '08b'),
+    format(test_cases[1]['rs2'] & 0xFF, '08b'),
+    format(res & 0xFF, '08b')    
 ))
+print('===')
 
 # Case 9: SLT (signed)
 sim.set_ex_aluop_i(0x9)
@@ -131,7 +149,7 @@ sim.set_ex_datars1_i(test_cases[3]['rs1'])
 sim.set_ex_datars2_i(test_cases[3]['rs2'])
 sim.dump()
 print('SLTU: {} < {} ? {}'.format(   
-    format(test_cases[3]['rs1'] & 0xFFFFFFFF, '08x'),
+    format(test_cases[3]['rs1'] & 0xFF, '08x'),
     test_cases[3]['rs2'],
     sim.get_ex_data_o()   
 ))
@@ -141,12 +159,8 @@ sim.set_ex_aluop_i(0x0)
 sim.dump()
 print(f'Default: output = {sim.get_ex_data_o()} (expected 0)')
 
-sim.finalize()
 print("=== END TESTBENCH ===")
-
-
-
-
+sim.finalize()
 
 
 
