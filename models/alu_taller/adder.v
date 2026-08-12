@@ -15,9 +15,9 @@ module adder #(
         for (i = 0; i < WORD; i = i + 1)
         begin    :sumadorNbits
             if (i == 0)
-                adder_2bits sum    (opea[i], opeb[i], cin, sal[i], carry[i]);
+                adder_1bit sum (opea[i], opeb[i], cin, sal[i], carry[i]);
             else
-                adder_2bits sum    (opea[i], opeb[i], carry[i-1], sal[i], carry[i]);
+                adder_1bit sum (opea[i], opeb[i], carry[i-1], sal[i], carry[i]);
         end
     endgenerate
     
@@ -25,18 +25,18 @@ module adder #(
  endmodule 
 
  
- module    adder_2bits (
-    input   opea,
-    input   opeb,
+ module    adder_1bit (
+    input   a,
+    input   b,
     input   cin, 
-    output  sal, 
+    output  s, 
     output  cout 
  );
-     // Result of the sum
-     assign sal = opea + opeb + cin;
-     
-     //calculation of carry out
-     assign cout = (opea*opeb) + ((opea+opeb) * cin);
+    // Result of the sum
+    assign s = (a ^ b) ^ cin; 
+    
+    //calculation of carry out
+    assign cout = (a & b) | ((a ^ b) & cin);
  
  endmodule 
  
