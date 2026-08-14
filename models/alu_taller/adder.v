@@ -9,7 +9,7 @@ module adder #(
     output [WORD-1:0]    sal, 
     output               cout 
  );
-    wire [WORD-1:0] carry;
+    wire [WORD-1:0] carry;//
     
     // Generate N bit adder using 2 bit adders
     genvar i;

@@ -3,7 +3,7 @@
 
 
 module ALU #(
-    parameter WORD  = 32,
+    parameter WORD  = 8,
     parameter ALUOP = 4
 )(
     input      [WORD-1:0] ex_datars1_i,

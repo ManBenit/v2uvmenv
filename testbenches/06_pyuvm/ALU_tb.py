@@ -9,11 +9,13 @@ import copy
 from types import SimpleNamespace
 
 
-
-class ALUReferenceModel:
+# ============================================================
+# Golden model written on Python
+# ============================================================
+class AluReferenceModel:
     def __init__(self):
-        self.WORD = 32
-        self.MASK = (1 << self.WORD) - 1  # 0xFFFFFFFF para 32 bits
+        self.WORD = 8
+        self.MASK = (1 << self.WORD) - 1  # 0xFF para 8 bits
 
     def _to_signed(self, val):
         """Convierte un valor a entero con signo en 'bits' bits."""
@@ -22,10 +24,9 @@ class ALUReferenceModel:
         return val
 
     def verify(self, *, ex_aluop_i, ex_datars1_i, ex_datars2_i):
-        # entradas hex a enteros
-        rs1 = int(ex_datars1_i, 16) & self.MASK
-        rs2 = int(ex_datars2_i, 16) & self.MASK
-        aluop = int(ex_aluop_i, 16) & 0xF
+        rs1 = ex_datars1_i & self.MASK
+        rs2 = ex_datars2_i & self.MASK
+        aluop = ex_aluop_i & 0xF
 
         if aluop == 0x8:   # ADD
             ex_data_o = (rs1 + rs2) & self.MASK
@@ -43,9 +44,9 @@ class ALUReferenceModel:
             ex_data_o = rs1 | rs2
         elif aluop == 0x7: # Shift left
             ex_data_o = (rs1 << rs2) & self.MASK
-        elif aluop == 0xD: # SRA (shift aritmético a la derecha)
+        elif aluop == 0xD: # SRA (shift right arithmetic)
             ex_data_o = (self._to_signed(rs1) >> (rs2 & (self.WORD - 1))) & self.MASK
-        elif aluop == 0xE: # SRL (shift lógico a la derecha)
+        elif aluop == 0xE: # SRL (shift right logical)
             ex_data_o = (rs1 >> (rs2 & (self.WORD - 1))) & self.MASK
         elif aluop == 0x9: # SLT (signed)
             ex_data_o = int(self._to_signed(rs1) < self._to_signed(rs2))
@@ -56,56 +57,13 @@ class ALUReferenceModel:
 
         ex_zerof_o = 1 if ex_data_o == 0 else 0
 
-        # Regresar en hexadecimal (con formato 0xXXXXXXXX)
-        return hex(ex_data_o), ex_zerof_o
+        return ex_data_o, ex_zerof_o
 
 
-# ===================== BFM =====================
-class ALUBFM:
-    def __init__(self):
-        self.dut = cocotb.top
-
-    async def set(self, op, a, b):
-        self.dut.ex_datars1_i.value = a
-        self.dut.ex_datars2_i.value = b
-        self.dut.ex_aluop_i.value = op
-        await Timer(1, units='ns')
-    
-    async def get(self):
-        return self.dut.ex_data_o.value, self.dut.ex_zerof_o.value
-        
-
-
-# ===================== Sequence Item =====================
-# En PyUVM se divide en Request y Response porque este no es una clase mutable de manera nativa como en SV
-class ALUSeqItemRequest(uvm_sequence_item):
-    def __init__(self, name):
-        super().__init__(name)
-        self.ex_aluop_i = 0
-        self.ex_datars1_i = 0
-        self.ex_datars2_i = 0
-
-    def randomize(self):
-        # No hay constraints nativos, así que se simulan
-        self.ex_aluop_i = random.choice([
-            0x8,
-            0x1,
-            0x2, 
-            0x3,
-            0x4,
-            0x5,
-            0x6,
-            0x7, 
-            0xD, 
-            0xE, 
-            0x9, 
-            0xA,        
-        ])
-        self.ex_datars1_i = random.randint(0, 100)
-        self.ex_datars2_i = random.randint(0, 100)
-
-
-class ALUSeqItemResponse(uvm_sequence_item):
+# ============================================================
+# Sequence Item
+# ============================================================
+class AluSeqItem(uvm_sequence_item):
     def __init__(self, name):
         super().__init__(name)
         # Inputs
@@ -116,76 +74,102 @@ class ALUSeqItemResponse(uvm_sequence_item):
         self.ex_data_o = 0 
         self.ex_zerof_o = 0
 
-    def dict_to_namespace(self, d):
-        for key, value in d.items():
-            if isinstance(value, dict):
-                d[key] = self.dict_to_namespace(value)
-        return SimpleNamespace(**d)
-    
-    def do(self):
-        self.item_dict = {
-            'request': {
-                'ex_aluop_i': self.ex_aluop_i,
-                'ex_datars1_i': self.ex_datars1_i,
-                'ex_datars2_i': self.ex_datars2_i
-            },
-            'response':{
-                'ex_zerof_o': self.ex_zerof_o,
-                'ex_data_o': self.ex_data_o
-            }
-        }
-
-    def get_response(self):
-        return self.dict_to_namespace(self.item_dict)
-    
-    # Tranferencia entre componentes UVM a travez de TLM
-    def copy(self):
-        return copy.deepcopy(self)
+    def randomize(self):
+        self.ex_aluop_i = random.choice([
+            0x8, 0x1, 0x2, 0x3,
+            0x4, 0x5, 0x6, 0x7, 
+            0xD, 0xE, 0x9, 0xA,        
+        ])
+        self.ex_datars1_i = random.randint(0, 100)
+        self.ex_datars2_i = random.randint(0, 100)
     
     def __str__(self):
-        return f'Transaction response -> {json.dumps(self.item_dict, indent=4)}'
+        item_dict = {
+            'request': {
+                'ex_aluop_i':   hex(self.ex_aluop_i),
+                'ex_datars1_i': hex(self.ex_datars1_i),
+                'ex_datars2_i': hex(self.ex_datars2_i)
+            },
+            'response':{
+                'ex_zerof_o':   hex(self.ex_zerof_o),
+                'ex_data_o':    hex(self.ex_data_o)
+            }
+        }
+        #return f'{json.dumps(item_dict, indent=4)}'
+        return f'{item_dict}'
+
+
+# ============================================================
+# Bus Functional Model (BFM)
+# ============================================================
+from abc import ABC, ABCMeta, abstractmethod
+class SingletonMeta(ABCMeta, type):
+    _instances = {}
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = super().__call__(*args, **kwargs)
+        return cls._instances[cls]
+class AluBfm(ABC, metaclass=SingletonMeta):
+    def __init__(self):
+        self.dut = cocotb.top
+        self.tr = None
+
+    async def set(self, tr: uvm_sequence_item):
+        self.tr = tr
+        self.dut.ex_datars1_i.value = self.tr.ex_datars1_i
+        self.dut.ex_datars2_i.value = self.tr.ex_datars2_i
+        self.dut.ex_aluop_i.value = self.tr.ex_aluop_i
+        await Timer(1, units='ns')
+    
+    async def get(self):
+        self.tr.ex_data_o = self.dut.ex_data_o.value.integer
+        self.tr.ex_zerof_o = self.dut.ex_zerof_o.value.integer
+        return self.tr
+
+
+
     
 
-# ===================== Sequence =====================
-class ALUSequence_Rand(uvm_sequence):
-    def __init__(self, name='ALUSequence_Rand'):
+# ============================================================
+# Sequences
+# ============================================================
+class AluSequenceRand(uvm_sequence):
+    def __init__(self, name='AluSequenceRand'):
         super().__init__(name)
         self.NUM_OF_ITEMS = 4
 
     async def body(self):
         for _ in range(self.NUM_OF_ITEMS):
-            req = ALUSeqItemRequest('req_ALUSeqItemRequest_Rand')
+            req = AluSeqItem('req_AluSeqItem_Rand')
             await self.start_item(req)
             req.randomize()
             await self.finish_item(req)
 
-class ALUSequence_Directed(uvm_sequence):
-    def __init__(self, name='ALUSequence_Rand'):
+class AluSequenceDirected(uvm_sequence):
+    def __init__(self, name='AluSequenceDirected'):
         super().__init__(name)
 
     async def body(self):
-        # await super().body()
         inputs= [
-            (0x8, 10, 5),       # Add
-            (0x1, 10, 5),       # Sub
-            (0x2, 10, 5),       # Prod
-            (0x3, 10, 5),       # Div
-            (0x4, 10, 5),       # AND
-            (0x5, 10, 5),       # XOR
-            (0x6, 10, 5),       # OR
-            (0x7, 10, 2),       # Shift left logical
+            (0x8, 10, 5),           # Add
+            (0x1, 10, 5),           # Sub
+            (0x2, 10, 5),           # Prod
+            (0x3, 10, 5),           # Div
+            (0x4, 10, 5),           # AND
+            (0x5, 10, 5),           # XOR
+            (0x6, 10, 5),           # OR
+            (0x7, 10, 2),           # Shift left logical
             (0xD, -8, 1),           # Shift right arith
             (0xE, -8, 1),           # Shift right logical
             (0x9, 5, 10),           # SLT
-            (0xA, 0xFFFFFFF0, 10),  # SLTU
+            (0xA, 0xF0, 10),  # SLTU
         ]
         
         for i in inputs:
             ex_aluop_i, ex_datars1_i, ex_datars2_i = i
-            req = ALUSeqItemRequest('req_ALUSeqItemRequest_Rand')
+            req = AluSeqItem('req_AluSeqItem_Directed')
             await self.start_item(req)
 
-            # Siempre aleatorizar, en caso de que no se envien valores a todas las entradas.
             req.randomize()
             req.ex_aluop_i = ex_aluop_i
             req.ex_datars1_i = ex_datars1_i
@@ -193,209 +177,202 @@ class ALUSequence_Directed(uvm_sequence):
             
             await self.finish_item(req)
 
-# ===================== Driver =====================
-class ALUDriver(uvm_driver):
-    def __init__(self, name, parent, bfm=None):
-        super().__init__(name, parent)
 
-    def build_phase(self):
-        super().build_phase()
-        super().build_phase()
-        self.bfm = ALUBFM()
-
-    async def run_phase(self):
-        await super().run_phase()
-        while True:
-            seq_item = await self.seq_item_port.get_next_item()
-            await self.bfm.set(
-                seq_item.ex_aluop_i, 
-                seq_item.ex_datars1_i, 
-                seq_item.ex_datars2_i
-            )
-
-            self.seq_item_port.item_done()
-
-
-# ===================== Monitor =====================
-class ALUMonitor(uvm_monitor):
+# ============================================================
+# Driver
+# ============================================================
+class AluDriver(uvm_driver):
     def __init__(self, name, parent):
         super().__init__(name, parent)
 
     def build_phase(self):
         super().build_phase()
-        self.bfm = ALUBFM()
+        self.bfm = AluBfm()
+
+    async def run_phase(self):
+        await super().run_phase()
+        while True:
+            req = await self.seq_item_port.get_next_item()
+            
+            # === Method 1: Using BFM ===
+            await self.bfm.set(req)
+
+            # === Method 2: Using direct interface (cocotb.top) ===
+            '''dut = cocotb.top
+            dut.ex_aluop_i.value = req.ex_aluop_i
+            dut.ex_datars1_i.value = req.ex_datars1_i
+            dut.ex_datars2_i.value = req.ex_datars2_i
+            await Timer(1, units='ns')'''
+
+            self.seq_item_port.item_done()
+
+
+# ============================================================
+# Monitor
+# ============================================================
+class AluMonitor(uvm_monitor):
+    def __init__(self, name, parent):
+        super().__init__(name, parent)
+
+    def build_phase(self):
+        super().build_phase()
+        self.bfm = AluBfm()
         self.logger.info('[MON] build phase')
         self.send = uvm_analysis_port('send_monitor', self)
 
     async def run_phase(self):
         await super().run_phase()
         while True:
-            transaction = ALUSeqItemResponse('monitor_item')
+            transaction = AluSeqItem('monitor_item')
             await Timer(1, units='ns')  # Simular delay de monitoreo
 
-            transaction.ex_aluop_i = hex(self.bfm.dut.ex_aluop_i.value.integer)
-            transaction.ex_datars1_i = hex(self.bfm.dut.ex_datars1_i.value.integer)
-            transaction.ex_datars2_i = hex(self.bfm.dut.ex_datars2_i.value.integer)
+            # === Method 1: Using BFM ===
+            transaction = await self.bfm.get()
+            print(f'{transaction}')
 
-            transaction.ex_data_o = hex(self.bfm.dut.ex_data_o.value.integer)
-            transaction.ex_zerof_o = hex(self.bfm.dut.ex_zerof_o.value.integer)
-            transaction.do()
+            # === Method 2: Direct interface (cocotb.top) ===
+            '''dut = cocotb.top
+            transaction.ex_aluop_i = dut.ex_aluop_i.value.integer
+            transaction.ex_datars1_i = dut.ex_datars1_i.value.integer
+            transaction.ex_datars2_i = dut.ex_datars2_i.value.integer
+            transaction.ex_data_o = dut.ex_data_o.value.integer
+            transaction.ex_zerof_o = dut.ex_zerof_o.value.integer'''
 
             self.logger.info(f'[MON] valor del resultado: {transaction}')
-            self.send.write(transaction)
+            self.send.write(copy.copy(transaction))
 
 
-# ===================== Agent =====================
-class ALUAgent(uvm_agent):
+# ============================================================
+# Agent
+# ============================================================
+class AluAgent(uvm_agent):
     def __init__(self, name, parent):
         super().__init__(name, parent)
-
 
     def build_phase(self):
         super().build_phase()
-        self.driver = ALUDriver('driver', self)
-        self.monitor = ALUMonitor('monitor', self)
+        self.driver = AluDriver('driver', self)
+        self.monitor = AluMonitor('monitor', self)
         self.seqr = uvm_sequencer('seqr', self)
-        #ConfigDB().set(None, '*', 'SEQR', self.seqr)
 
     def connect_phase(self):
         super().connect_phase()
-
         self.driver.seq_item_port.connect(self.seqr.seq_item_export)
 
 
-# ===================== Scoreboard =====================
-class ALUScoreboard(uvm_scoreboard, uvm_subscriber):
+# ============================================================
+# Scoreboard 
+# ============================================================
+class AluScoreboard(uvm_scoreboard, uvm_subscriber):
     def __init__(self, name, parent):
         super().__init__(name, parent)
-        self.ref_model = ALUReferenceModel()  # instancia del modelo de referencia
+        self.ref_model = AluReferenceModel()
     
     def build_phase(self):
         super().build_phase()
 
     def write(self, tr):
-        # Impresión de valores como en el SystemVerilog
-        if tr.ex_aluop_i == 0x8:
-            print(f'Add: {tr.ex_datars1_i} + {tr.ex_datars2_i} = {tr.ex_data_o}')
-        elif tr.ex_aluop_i == 0x1:
-            print(f'Sub: {tr.ex_datars1_i} - {tr.ex_datars2_i} = {tr.ex_data_o}')
-        elif tr.ex_aluop_i == 0x2:
-            print(f'Prod: {tr.ex_datars1_i} * {tr.ex_datars2_i} = {tr.ex_data_o}')
-        elif tr.ex_aluop_i == 0x3:
-            print(f'Div: {tr.ex_datars1_i} / {tr.ex_datars2_i} = {tr.ex_data_o}')
-        elif tr.ex_aluop_i == 0x4:
-            print(f'AND: {bin(tr.ex_datars1_i)} & {bin(tr.ex_datars2_i)} = {bin(tr.ex_data_o)}')
-        elif tr.ex_aluop_i == 0x5:
-            print(f'XOR: {bin(tr.ex_datars1_i)} ^ {bin(tr.ex_datars2_i)} = {bin(tr.ex_data_o)}')
-        elif tr.ex_aluop_i == 0x6:
-            print(f'OR: {bin(tr.ex_datars1_i)} | {bin(tr.ex_datars2_i)} = {bin(tr.ex_data_o)}')
-        elif tr.ex_aluop_i == 0x7:
-            print(f'Shift Left 2: {tr.ex_datars1_i} << {tr.ex_datars2_i} = {tr.ex_data_o}')
-            print(f'Shift Left 2: {bin(tr.ex_datars1_i)} << {bin(tr.ex_datars2_i)} = {bin(tr.ex_data_o)}')
-        elif tr.ex_aluop_i == 0xD:
-            print(f'Shift Right Arith: {tr.ex_datars1_i} >>> {tr.ex_datars2_i} = {tr.ex_data_o}')
-            print(f'Shift Right Arith: {bin(tr.ex_datars1_i)} >>> {bin(tr.ex_datars2_i)} = {bin(tr.ex_data_o)}')
-        elif tr.ex_aluop_i == 0xE:
-            print(f'Shift Right Logical: {tr.ex_datars1_i} >> {tr.ex_datars2_i} = {tr.ex_data_o}')
-            print(f'Shift Right Logical: {bin(tr.ex_datars1_i)} >> {bin(tr.ex_datars2_i)} = {bin(tr.ex_data_o)}')
-        elif tr.ex_aluop_i == 0x9:
-            print(f'SLT: {tr.ex_datars1_i} < {tr.ex_datars2_i} ? {tr.ex_data_o}')
-        elif tr.ex_aluop_i == 0xA:
-            print(f'SLTU: {hex(tr.ex_datars1_i)} < {hex(tr.ex_datars2_i)} ? {tr.ex_data_o}')
-        else:
-            print(f'Default: output = {tr.ex_data_o}')
+        op =  tr.ex_aluop_i
+        rs1 = tr.ex_datars1_i
+        rs2 = tr.ex_datars2_i
+        out = tr.ex_data_o
 
-        # Llamada al modelo de referencia
+        # Printing with format //////
+        if op == 0x8:
+            print(f'Add: {rs1} + {rs2} = {out}')
+        elif op == 0x1:
+            print(f'Sub: {rs1} - {rs2} = {out}')
+        elif op == 0x2:
+            print(f'Prod: {rs1} * {rs2} = {out}')
+        elif op == 0x3:
+            print(f'Div: {rs1} / {rs2} = {out}')
+        elif op == 0x4:
+            print(f'AND: {bin(rs1)} & {bin(rs2)} = {bin(out)}')
+        elif op == 0x5:
+            print(f'XOR: {bin(rs1)} ^ {bin(rs2)} = {bin(out)}')
+        elif op == 0x6:
+            print(f'OR: {bin(rs1)} | {bin(rs2)} = {bin(out)}')
+        elif op == 0x7:
+            print(f'Shift Left 2: {rs1} << {rs2} = {out}')
+            print(f'Shift Left 2: {bin(rs1)} << {bin(rs2)} = {bin(out)}')
+        elif op == 0xD:
+            print(f'Shift Right Arith: {rs1} >>> {rs2} = {out}')
+            print(f'Shift Right Arith: {bin(rs1)} >>> {bin(rs2)} = {bin(out)}')
+        elif op == 0xE:
+            print(f'Shift Right Logical: {rs1} >> {rs2} = {out}')
+            print(f'Shift Right Logical: {bin(rs1)} >> {bin(rs2)} = {bin(out)}')
+        elif op == 0x9:
+            print(f'SLT: {rs1} < {rs2} ? {out}')
+        elif op == 0xA:
+            print(f'SLTU: {hex(rs1)} < {hex(rs2)} ? {out}')
+        else:
+            print(f'Default: output = {out}')
+        #/////////////////////////////
+
         ref_res, ref_zero = self.ref_model.verify(
             ex_aluop_i   =  tr.ex_aluop_i,
             ex_datars1_i =  tr.ex_datars1_i,
             ex_datars2_i =  tr.ex_datars2_i
         )
 
-        ##Comparación DUT vs Modelo
-        ### Forma no bloqueante
-        # if tr.ex_data_o == ref_res:
-        #     self.logger.info(f'[SCB] PASS data: {tr}')
-        # else:
-        #     self.logger.error(f'[SCB] FAIL data: DUT={tr.ex_data_o} REF={ref_res}')
-
-        # if int(tr.ex_zerof_o, 16) == ref_zero:
-        #     self.logger.info(f'[SCB] PASS zero: {tr}')
-        # else:
-        #     self.logger.error(f'[SCB] FAIL zero: DUT={tr.ex_zerof_o} REF={ref_zero}')
-
-        ### Forma bloqueante (recomendada)
         if ref_res != 'def':
             assert tr.ex_data_o == ref_res, f'[SCB] FAIL data: DUT={tr.ex_data_o} REF={ref_res}'
-            assert int(tr.ex_zerof_o, 16) == ref_zero, f'[SCB] FAIL zero: DUT={tr.ex_zerof_o} REF={ref_zero}'
+            assert tr.ex_zerof_o == ref_zero, f'[SCB] FAIL zero: DUT={tr.ex_zerof_o} REF={ref_zero}'
 
 
-
-# ===================== Coverage (Subscriber) =====================
-class ALUCoverage(uvm_subscriber):
+# ============================================================
+# Coverage (Subscriber)
+# ============================================================
+class AluCoverage(uvm_subscriber):
     def __init__(self, name, parent):
         super().__init__(name, parent)
         self.num_transactions = 0
 
-        # Diccionario de bins (igual que los coverpoints)
         self.aluop_bins = {
-            0x8: 0, # add
-            0x1: 0, # sub
-            0x2: 0, # mul
-            0x3: 0, # div
-            0x4: 0, # andop
-            0x5: 0, # xorop
-            0x6: 0, # orop
-            0x7: 0, # sll
-            0xD: 0, # sra
-            0xE: 0, # srl
-            0x9: 0, # slt
-            0xA: 0  #sltu
+            0x8: 0, 0x1: 0, 0x2: 0, 0x3: 0,
+            0x4: 0, 0x5: 0, 0x6: 0, 0x7: 0,
+            0xD: 0, 0xE: 0, 0x9: 0, 0xA: 0
         }
-        self.zero_bins = {
-            0: 0, 
-            1: 0
-        }
-        self.cross_bins = {}  # (aluop, zero) -> contador
+        self.zero_bins = {0: 0, 1: 0}
+        self.cross_bins = {}
 
     def write(self, tr):
         self.num_transactions += 1
+        
+        op = tr.ex_aluop_i
+        z_flag = tr.ex_zerof_o
 
-        # Actualizar aluop bins
-        if tr.ex_aluop_i in self.aluop_bins:
-            self.aluop_bins[tr.ex_aluop_i] += 1
+        if op in self.aluop_bins:
+            self.aluop_bins[op] += 1
+        if z_flag in self.zero_bins:
+            self.zero_bins[z_flag] += 1
 
-        # Actualizar zero bins
-        if tr.ex_zerof_o in self.zero_bins:
-            self.zero_bins[tr.zero] += 1
-
-        # Actualizar cross
-        key = (tr.ex_aluop_i, tr.ex_zerof_o)
+        key = (op, z_flag)
         self.cross_bins[key] = self.cross_bins.get(key, 0) + 1
 
     def report_phase(self):
         super().report_phase()
-        # Calcular % cobertura (igual que get_inst_coverage())
         aluop_cov = 100 * sum(1 for v in self.aluop_bins.values() if v > 0) / len(self.aluop_bins)
         zero_cov = 100 * sum(1 for v in self.zero_bins.values() if v > 0) / len(self.zero_bins)
         cross_cov = 100 * sum(1 for v in self.cross_bins.values() if v > 0) / (len(self.aluop_bins) * len(self.zero_bins))
 
-        # Reportar
-        self.logger.info(f'[COV] Cobertura aluop: {aluop_cov:.2f}%')
-        self.logger.info(f'[COV] Cobertura zero: {zero_cov:.2f}%')
-        self.logger.info(f'[COV] Cobertura cruzada: {cross_cov:.2f}%')
-        self.logger.info(f'[COV] Número total de transacciones observadas: {self.num_transactions}')
+        self.logger.info(f'[COV] Coverage aluop: {aluop_cov:.2f}%')
+        self.logger.info(f'[COV] Coverage zero: {zero_cov:.2f}%')
+        self.logger.info(f'[COV] Cross coverage: {cross_cov:.2f}%')
+        self.logger.info(f'[COV] Total transactions: {self.num_transactions}')
 
-# ===================== Environment =====================
-class ALUEnv(uvm_env):
+# ============================================================
+# Environment
+# ============================================================
+class AluEnv(uvm_env):
     def __init__(self, name, parent, bfm=None):
         super().__init__(name, parent)
 
     def build_phase(self):
         super().build_phase()
-        self.agent = ALUAgent('agent', self)
-        self.scb = ALUScoreboard('scb', self)
-        self.cov = ALUCoverage('cov', self)
+        self.agent = AluAgent('agent', self)
+        self.scb = AluScoreboard('scb', self)
+        self.cov = AluCoverage('cov', self)
 
     def connect_phase(self):
         super().connect_phase()
@@ -403,27 +380,31 @@ class ALUEnv(uvm_env):
         self.agent.monitor.send.connect(self.scb.analysis_export)
 
 
-# ===================== Test =====================
-class ALUTest(uvm_test):
+# ============================================================
+# Test
+# ============================================================
+class AluTest(uvm_test):
     def __init__(self, name, parent):
         super().__init__(name, parent)
-        self.seq_rand = ALUSequence_Rand('seq_rand')
-        self.seq_directed = ALUSequence_Directed('seq_directed')
+        self.seq_rand = AluSequenceRand('seq_rand')
+        self.seq_directed = AluSequenceDirected('seq_directed')
 
     def build_phase(self):
         super().build_phase()
-        self.env = ALUEnv('env', self)
+        self.env = AluEnv('env', self)
         ConfigDB().set(None, "env.*", "dut", cocotb.top)
 
     async def run_phase(self):
         self.raise_objection()
         await self.seq_rand.start(self.env.agent.seqr)
-        #await self.seq_directed.start(self.env.agent.seqr)
+        await self.seq_directed.start(self.env.agent.seqr)
         self.drop_objection()
 
 
-# ===================== Cocotb Integration =====================
+# ============================================================
+# Top
+# ============================================================
 @cocotb.test() 
 async def test(dut): 
-    await uvm_root().run_test('ALUTest')
-
+    await uvm_root().run_test('AluTest')
+    

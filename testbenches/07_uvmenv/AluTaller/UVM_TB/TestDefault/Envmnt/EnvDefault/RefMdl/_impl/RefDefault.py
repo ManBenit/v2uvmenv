@@ -91,7 +91,7 @@ class RefDefault(RefModel):
         # self.__transaction.SIGNAL = to_bin_repr(SIGNAL, SIGNAL_SIZE)
         # Where SIGNAL_SIZE is auto written by UVMEnv.
         self.__transaction.ex_zerof_o = to_bin_repr(zero, 1)
-        self.__transaction.ex_data_o = to_bin_repr(result, 32)
+        self.__transaction.ex_data_o = to_bin_repr(result, 8)
 
 
     def __do_with_verilator(self):

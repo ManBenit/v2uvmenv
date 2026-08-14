@@ -28,8 +28,8 @@ class SitDefault(uvm_sequence_item):
 
     def randomize(self):
         self.ex_aluop_i = random.randint(0, 15)
-        self.ex_datars1_i = random.randint(0, 200)
-        self.ex_datars2_i = random.randint(0, 200)
+        self.ex_datars1_i = random.randint(0, 100)
+        self.ex_datars2_i = random.randint(0, 100)
     
     def pretty_print(self):
         print(json.dumps(

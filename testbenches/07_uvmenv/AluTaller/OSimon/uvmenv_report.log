@@ -209,3 +209,35 @@
 2026-08-11 00:09:11,228 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x3', 'ex_datars1_i': '0x62', 'ex_datars2_i': '0x71'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
 2026-08-11 00:09:11,229 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0xa', 'ex_datars1_i': '0xc2', 'ex_datars2_i': '0xe'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
 2026-08-11 00:09:11,231 - INFO [uvm_test_top.env.AgentDefault.coverage]: Processed 10 transactions
+2026-08-14 12:49:25,213 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x1', 'ex_datars1_i': '0x1', 'ex_datars2_i': '0x21'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0xffffffe0'}}
+2026-08-14 12:49:25,214 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0xc', 'ex_datars1_i': '0xac', 'ex_datars2_i': '0x1a'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:49:25,215 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0xc', 'ex_datars1_i': '0x19', 'ex_datars2_i': '0x7c'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:49:25,215 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x2', 'ex_datars1_i': '0xac', 'ex_datars2_i': '0x10'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0xac0'}}
+2026-08-14 12:49:25,215 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x3', 'ex_datars1_i': '0x6c', 'ex_datars2_i': '0x7d'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:49:25,216 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x4', 'ex_datars1_i': '0x70', 'ex_datars2_i': '0xc1'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0x40'}}
+2026-08-14 12:49:25,216 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x9', 'ex_datars1_i': '0x20', 'ex_datars2_i': '0x26'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0x1'}}
+2026-08-14 12:49:25,216 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x5', 'ex_datars1_i': '0x63', 'ex_datars2_i': '0xa7'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0xc4'}}
+2026-08-14 12:49:25,216 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x1', 'ex_datars1_i': '0x49', 'ex_datars2_i': '0xf'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0x3a'}}
+2026-08-14 12:49:25,217 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x3', 'ex_datars1_i': '0x90', 'ex_datars2_i': '0x3d'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0x2'}}
+2026-08-14 12:49:25,218 - INFO [uvm_test_top.env.AgentDefault.coverage]: Processed 10 transactions
+2026-08-14 12:51:45,312 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x0', 'ex_datars1_i': '0x26', 'ex_datars2_i': '0x54'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:51:45,313 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x3', 'ex_datars1_i': '0x4d', 'ex_datars2_i': '0x15'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0x3'}}
+2026-08-14 12:51:45,313 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x7', 'ex_datars1_i': '0x48', 'ex_datars2_i': '0x10'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0x480000'}}
+2026-08-14 12:51:45,313 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x1', 'ex_datars1_i': '0x1c', 'ex_datars2_i': '0x2b'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0xfffffff1'}}
+2026-08-14 12:51:45,314 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0xd', 'ex_datars1_i': '0x41', 'ex_datars2_i': '0x45'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:51:45,314 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x3', 'ex_datars1_i': '0x3a', 'ex_datars2_i': '0x27'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0x1'}}
+2026-08-14 12:51:45,314 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0xa', 'ex_datars1_i': '0x34', 'ex_datars2_i': '0x2e'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:51:45,314 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x2', 'ex_datars1_i': '0x26', 'ex_datars2_i': '0x14'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0x2f8'}}
+2026-08-14 12:51:45,315 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x8', 'ex_datars1_i': '0x13', 'ex_datars2_i': '0x1f'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0x32'}}
+2026-08-14 12:51:45,315 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0xc', 'ex_datars1_i': '0x1b', 'ex_datars2_i': '0x34'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:53:08,636 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x2', 'ex_datars1_i': '0x1b', 'ex_datars2_i': '0x20'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0x60'}}
+2026-08-14 12:53:08,638 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x9', 'ex_datars1_i': '0x31', 'ex_datars2_i': '0x6'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:53:08,638 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0xc', 'ex_datars1_i': '0x59', 'ex_datars2_i': '0x42'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:53:08,638 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0xf', 'ex_datars1_i': '0x51', 'ex_datars2_i': '0x1'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:53:08,638 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x3', 'ex_datars1_i': '0x58', 'ex_datars2_i': '0x23'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0x2'}}
+2026-08-14 12:53:08,639 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0xb', 'ex_datars1_i': '0x14', 'ex_datars2_i': '0x4f'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:53:08,639 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0x8', 'ex_datars1_i': '0x3', 'ex_datars2_i': '0x2a'}, 'response': {'ex_zerof_o': '0x0', 'ex_data_o': '0x2d'}}
+2026-08-14 12:53:08,639 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0xb', 'ex_datars1_i': '0x7', 'ex_datars2_i': '0x1e'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:53:08,639 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0xb', 'ex_datars1_i': '0x52', 'ex_datars2_i': '0x4d'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:53:08,640 - INFO [uvm_test_top.env.AgentDefault.monitor]: {'request': {'ex_aluop_i': '0xb', 'ex_datars1_i': '0xf', 'ex_datars2_i': '0x37'}, 'response': {'ex_zerof_o': '0x1', 'ex_data_o': '0x0'}}
+2026-08-14 12:53:08,641 - INFO [uvm_test_top.env.AgentDefault.coverage]: Processed 10 transactions
