@@ -1,6 +1,24 @@
 `include "uvm_macros.svh"
 import uvm_pkg::*;
 
+
+// ============================================================
+// Example config
+// ============================================================
+class alu_config extends uvm_object;
+    `uvm_object_utils(alu_config)
+
+    integer int_ex = 2;
+    string str_ex = "ConfigExample";
+    bit has_scoreboard = 1;
+    bit has_coverage = 1;
+
+
+    function new(string name = "alu_config");
+        super.new(name);
+    endfunction
+endclass
+
 // ============================================================
 // DUT interface
 // ============================================================
@@ -295,6 +313,9 @@ class alu_scoreboard extends uvm_scoreboard;
     `uvm_component_utils(alu_scoreboard)
 
     uvm_analysis_imp#(alu_seq_item, alu_scoreboard) imp;
+    alu_config got_cfg;
+    integer got_intdir;
+    string got_strdir;
     
     function new(string name, uvm_component parent);
         super.new(name, parent);
@@ -317,6 +338,24 @@ class alu_scoreboard extends uvm_scoreboard;
             4'hA: return (tr.a < tr.b);                      
             default: return '0;
         endcase
+    endfunction
+
+    function void extract_phase(uvm_phase phase);
+        super.extract_phase(phase);
+
+        uvm_config_db#(alu_config)::get(this, "*", "alu_cfg", got_cfg);
+        uvm_config_db#(int)::get(this, "*", "int_direct", got_intdir);
+        uvm_config_db#(string)::get(this, "*", "real_direct", got_strdir);
+        
+        `uvm_info    ("SCB", $sformatf("alu_cfg.int_ex = %0d",         got_cfg.int_ex),         UVM_NONE)
+        `uvm_info    ("SCB", $sformatf("alu_cfg.str_ex = %s",          got_cfg.str_ex),         UVM_LOW)
+        `uvm_info    ("SCB", $sformatf("alu_cfg.has_scoreboard = %0d", got_cfg.has_scoreboard), UVM_MEDIUM) // Default verbosity
+        `uvm_info    ("SCB", $sformatf("alu_cfg.has_coverage = %0d",   got_cfg.has_coverage),   UVM_HIGH)
+        `uvm_info    ("SCB", $sformatf("int_direct = %0d",             got_intdir),             UVM_FULL)
+        `uvm_info    ("SCB", $sformatf("real_direct = %0d",            got_strdir),             UVM_DEBUG)
+        `uvm_warning ("SCB", $sformatf("This is a WARNING"))
+        `uvm_error   ("SCB", $sformatf("This is an ERROR"))
+        //`uvm_fatal   ("SCB", $sformatf("This is a FATAL"))
     endfunction
 
     function void write(alu_seq_item tr);
@@ -444,11 +483,23 @@ class alu_test extends uvm_test;
     alu_sequence_rand seq_rand;
     alu_sequence_directed seq_directed;
 
+    alu_config cfg;
+
     function new(string name, uvm_component parent);
         super.new(name, parent);
     endfunction
 
     function void build_phase(uvm_phase phase);
+        cfg = alu_config::type_id::create("cfg");
+        cfg.int_ex = 9;
+        cfg.str_ex = "Changed";
+        cfg.has_scoreboard = 1;
+        cfg.has_coverage = 0;
+
+        uvm_config_db#(alu_config)::set(this, "*", "alu_cfg", cfg);
+        uvm_config_db#(int)::set(this, "*", "int_direct", 50);
+        uvm_config_db#(real)::set(this, "*", "real_direct", 9.5);
+
         env = alu_env::type_id::create("env", this);
         seq_rand = alu_sequence_rand::type_id::create("seq_rand");
         seq_directed = alu_sequence_directed::type_id::create("seq_directed");
@@ -483,7 +534,7 @@ module top;
 
     initial begin
         // ============================================================-
-        // Blobk for EDA playground
+        // Block for EDA playground
         // ============================================================-
         // $dumpfile("dump.vcd"); 
         // $dumpvars;

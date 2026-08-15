@@ -1,13 +1,24 @@
 import cocotb
 import pyuvm
 from cocotb.triggers import Timer
-from pyuvm import uvm_test, uvm_sequence, uvm_sequencer, uvm_driver, uvm_monitor, uvm_agent, uvm_env, uvm_root, uvm_sequence_item, uvm_analysis_port, uvm_analysis_export, ConfigDB, uvm_subscriber, uvm_scoreboard
+from pyuvm import uvm_test, uvm_sequence, uvm_sequencer, uvm_driver, uvm_monitor, uvm_agent, uvm_env, uvm_root, uvm_sequence_item, uvm_analysis_port, uvm_analysis_export, ConfigDB, uvm_subscriber, uvm_scoreboard, UVMFatalError
 from pyuvm import *
 import random
 import json
 import copy
 from types import SimpleNamespace
 
+
+# ============================================================
+# Example config
+# ============================================================
+class AluConfig(uvm_object):
+    def __init__(self, name="alu_config"):
+        super().__init__(name)
+        self.int_ex = 2
+        self.str_ex = "ConfigExample"
+        self.has_scoreboard = 1
+        self.has_coverage = 1
 
 # ============================================================
 # Golden model written on Python
@@ -267,9 +278,37 @@ class AluScoreboard(uvm_scoreboard, uvm_subscriber):
     def __init__(self, name, parent):
         super().__init__(name, parent)
         self.ref_model = AluReferenceModel()
+        self.got_cfg = None
+        self.got_intdir = None
+        self.got_strdir = None
     
     def build_phase(self):
         super().build_phase()
+
+    def extract_phase(self):
+        super().extract_phase()
+
+        # Lectura de variables desde ConfigDB
+        # ConfigDB().get(cntxt, inst_name, field_name) devuelve directamente el valor o lanza error si no existe
+        try:
+            self.got_cfg = ConfigDB().get(self, "", "alu_cfg")
+            self.got_intdir = ConfigDB().get(self, "", "int_direct")
+            self.got_strdir = ConfigDB().get(self, "", "real_direct")
+        except KeyError as e:
+            self.logger.error(f"[SCB] Error al obtener datos de ConfigDB: {e}")
+            return
+
+        self.logger.info(f"alu_cfg.int_ex = {self.got_cfg.int_ex}")
+        self.logger.info(f"alu_cfg.str_ex = {self.got_cfg.str_ex}")
+        self.logger.info(f"alu_cfg.has_scoreboard = {self.got_cfg.has_scoreboard}")
+        self.logger.info(f"alu_cfg.has_coverage = {self.got_cfg.has_coverage}")
+        self.logger.info(f"int_direct = {self.got_intdir}")
+        self.logger.info(f"real_direct = {self.got_strdir}")
+        
+        # Logs de Advertencia y Error
+        self.logger.warning("This is a WARNING")
+        self.logger.error("This is an ERROR")
+        self.logger.critical("This is a FATAL")  # Equivalente a uvm_fatal
 
     def write(self, tr):
         op =  tr.ex_aluop_i
@@ -386,19 +425,30 @@ class AluEnv(uvm_env):
 class AluTest(uvm_test):
     def __init__(self, name, parent):
         super().__init__(name, parent)
-        self.seq_rand = AluSequenceRand('seq_rand')
-        self.seq_directed = AluSequenceDirected('seq_directed')
 
     def build_phase(self):
         super().build_phase()
+
+        self.cfg = AluConfig("cfg")
+        self.cfg.int_ex = 9
+        self.cfg.str_ex = "Changed"
+        self.cfg.has_scoreboard = 1
+        self.cfg.has_coverage = 0
+
+        ConfigDB().set(self, "*", "alu_cfg", self.cfg)
+        ConfigDB().set(self, "*", "int_direct", 50)
+        ConfigDB().set(self, "*", "real_direct", 9.5)
+
         self.env = AluEnv('env', self)
-        ConfigDB().set(None, "env.*", "dut", cocotb.top)
+        self.seq_rand = AluSequenceRand('seq_rand')
+        self.seq_directed = AluSequenceDirected('seq_directed')
 
     async def run_phase(self):
         self.raise_objection()
         await self.seq_rand.start(self.env.agent.seqr)
         await self.seq_directed.start(self.env.agent.seqr)
         self.drop_objection()
+
 
 
 # ============================================================

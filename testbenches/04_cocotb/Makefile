@@ -2,13 +2,12 @@ CWD = $(shell pwd)
 HDL_SRC = ../../models/alu_taller
 TOPLEVEL_LANG ?= verilog
 
-# Variables de simulación
+# Simulation variables
 SIM ?= icarus
 TOPLEVEL = ALU
 MODULE = ALU_tb
 
-# Sincronización de tiempos para Python (Cocotb)
-# Le decimos explícitamente a cocotb cómo interpretar los tiempos (ej. await Timer(1, "ns"))
+# Time sync for Cocotb triggers
 COCOTB_HDL_TIMEUNIT = 1ns
 COCOTB_HDL_TIMEPRECISION = 1ps
 export WAVES = 1
@@ -16,7 +15,7 @@ export WAVES = 1
 
 
 # ==========================================
-# CONFIGURACIÓN ESPECÍFICA POR SIMULADOR
+# Config per simulator
 # ==========================================
 ifeq ($(SIM),verilator)
     # --- VERILATOR ---
@@ -30,7 +29,7 @@ else
     VERILOG_SOURCES = $(CWD)/timescale.v  $(shell find $(HDL_SRC) -type f \( -name "*.v" -o -name "*.sv" \))
 endif
 
-# Importar las reglas nativas de Cocotb
+# Import native rules from Cocotb
 include $(shell cocotb-config --makefiles)/Makefile.sim
 
 
