@@ -221,6 +221,7 @@ class alu_driver extends uvm_driver#(alu_seq_item);
     endfunction
 
     task run_phase(uvm_phase phase);
+        super.run_phase(phase);
         forever begin
             alu_seq_item req;
             seq_item_port.get_next_item(req);
@@ -256,23 +257,22 @@ class alu_monitor extends uvm_monitor;
 
     function void build_phase(uvm_phase phase);
         if(!uvm_config_db#(virtual alu_if)::get(this, "", "vif", vif))
-            `uvm_fatal("NOVIF", "No se encontró la interfaz")
+            `uvm_fatal("NOVIF", "No interface found")
         bfm_inst = new(vif);
     endfunction
 
     task run_phase(uvm_phase phase);
         forever begin
-            alu_seq_item transaction;
-            
             // === Method 1: Using BFM ===
-            transaction = bfm_inst.get();
+          	//alu_seq_item transaction = bfm_inst.get();
             
             // === Method 2: Direct interface ===
-            /*transaction.a     = vif.ex_datars1_i;
+          	alu_seq_item transaction = alu_seq_item::type_id::create("transaction");
+            transaction.a     = vif.ex_datars1_i;
             transaction.b     = vif.ex_datars2_i;
             transaction.aluop = vif.ex_aluop_i;
             transaction.y     = vif.ex_data_o;
-            transaction.zero  = vif.ex_zerof_o; */
+            transaction.zero  = vif.ex_zerof_o; 
 
             `uvm_info("MON", transaction.convert2string(), UVM_MEDIUM)
             send.write(transaction);
@@ -296,12 +296,14 @@ class alu_agent extends uvm_agent;
     endfunction
 
     function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
         driver  = alu_driver::type_id::create("driver", this);
         monitor = alu_monitor::type_id::create("monitor", this);
         seqr    = uvm_sequencer#(alu_seq_item)::type_id::create("seqr", this);
     endfunction
 
     function void connect_phase(uvm_phase phase);
+        super.connect_phase(phase);
         driver.seq_item_port.connect(seqr.seq_item_export);
     endfunction
 endclass
@@ -405,6 +407,7 @@ class alu_coverage extends uvm_subscriber#(alu_seq_item);
 
     alu_seq_item tr;  
     int unsigned num_transactions;
+    real cov;
 
     covergroup alu_cg;
         option.per_instance = 1; 
@@ -443,7 +446,8 @@ class alu_coverage extends uvm_subscriber#(alu_seq_item);
     endfunction
 
     function void report_phase(uvm_phase phase);
-        real cov = alu_cg.get_inst_coverage();
+        super.report_phase(phase);
+        cov = alu_cg.get_inst_coverage();
         `uvm_info("COV", $sformatf("Functional coverage reached: %0.2f%%", cov), UVM_NONE)
         `uvm_info("COV", $sformatf("Total transactions: %0d", num_transactions), UVM_NONE)
     endfunction
@@ -463,12 +467,14 @@ class alu_env extends uvm_env;
     endfunction
 
     function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
         agent = alu_agent::type_id::create("agent", this);
         scb   = alu_scoreboard::type_id::create("scb", this);
         cov   = alu_coverage::type_id::create("cov", this);
     endfunction
 
     function void connect_phase(uvm_phase phase);
+        super.connect_phase(phase);
         agent.monitor.send.connect(scb.imp);
         agent.monitor.send.connect(cov.analysis_export);
     endfunction
@@ -490,6 +496,7 @@ class alu_test extends uvm_test;
     endfunction
 
     function void build_phase(uvm_phase phase);
+        super.build_phase(phase);
         cfg = alu_config::type_id::create("cfg");
         cfg.int_ex = 9;
         cfg.str_ex = "Changed";
@@ -506,9 +513,10 @@ class alu_test extends uvm_test;
     endfunction
 
     task run_phase(uvm_phase phase);
+        super.run_phase(phase);
         phase.raise_objection(this);
         seq_rand.start(env.agent.seqr);
-         seq_directed.start(env.agent.seqr);
+        seq_directed.start(env.agent.seqr);
         phase.drop_objection(this);
     endtask
 
@@ -543,4 +551,3 @@ module top;
         run_test("alu_test");
     end
 endmodule
-

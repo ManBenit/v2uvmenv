@@ -202,18 +202,18 @@ class AluDriver(uvm_driver):
 
     async def run_phase(self):
         await super().run_phase()
+        dut = cocotb.top
         while True:
             req = await self.seq_item_port.get_next_item()
             
             # === Method 1: Using BFM ===
-            await self.bfm.set(req)
+            #await self.bfm.set(req)
 
             # === Method 2: Using direct interface (cocotb.top) ===
-            '''dut = cocotb.top
             dut.ex_aluop_i.value = req.ex_aluop_i
             dut.ex_datars1_i.value = req.ex_datars1_i
             dut.ex_datars2_i.value = req.ex_datars2_i
-            await Timer(1, units='ns')'''
+            await Timer(1, units='ns')
 
             self.seq_item_port.item_done()
 
@@ -233,23 +233,22 @@ class AluMonitor(uvm_monitor):
 
     async def run_phase(self):
         await super().run_phase()
+        dut = cocotb.top
         while True:
             transaction = AluSeqItem('monitor_item')
-            await Timer(1, units='ns')  # Simular delay de monitoreo
+            await Timer(1, units='ns')  # Simulate monitoring delay
 
             # === Method 1: Using BFM ===
-            transaction = await self.bfm.get()
-            print(f'{transaction}')
+            #transaction = await self.bfm.get()
 
             # === Method 2: Direct interface (cocotb.top) ===
-            '''dut = cocotb.top
             transaction.ex_aluop_i = dut.ex_aluop_i.value.integer
             transaction.ex_datars1_i = dut.ex_datars1_i.value.integer
             transaction.ex_datars2_i = dut.ex_datars2_i.value.integer
             transaction.ex_data_o = dut.ex_data_o.value.integer
-            transaction.ex_zerof_o = dut.ex_zerof_o.value.integer'''
+            transaction.ex_zerof_o = dut.ex_zerof_o.value.integer
 
-            self.logger.info(f'[MON] valor del resultado: {transaction}')
+            self.logger.info(f'[MON] Result value: {transaction}')
             self.send.write(copy.copy(transaction))
 
 
@@ -444,6 +443,7 @@ class AluTest(uvm_test):
         self.seq_directed = AluSequenceDirected('seq_directed')
 
     async def run_phase(self):
+        super().run_phase()
         self.raise_objection()
         await self.seq_rand.start(self.env.agent.seqr)
         await self.seq_directed.start(self.env.agent.seqr)
